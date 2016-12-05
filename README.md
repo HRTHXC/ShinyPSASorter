@@ -12,3 +12,7 @@ This is an R Markdown document written for the ShinySorter application, based fr
 This is an interim release prior to the development of the Online Shiny release. Input is via .csv document, which can be downloaded from <a href="http://shiny.powerplant.pfr.co.nz/PsaBlockSummary/">here</a>, for use on your client machine. You can also use the VBScript release, instructions will come soon.
 
 email: Harrison.crane@plantandfood.co.nz
+
+## VBScript release (use Excel format, .xlsx)
+
+To install the VBScript of ShinyPSASorter, please use file calcAvg.bas in this gist
