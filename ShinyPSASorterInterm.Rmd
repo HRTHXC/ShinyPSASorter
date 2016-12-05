@@ -12,11 +12,23 @@ print(rowCount)
 uniqueCouple <- levels(test[1, "BrCrCode"])
 uniqueCoupleSize <- length(uniqueCouple)
 print(uniqueCoupleSize)
+#split the string
 testerSplit <- strsplit(levels(test[uniqueCouple, "BrCrCode"]), "[_]")
-print(testerSplit)[1]
-substrRight <- function(x, n){
-  substr(x, nchar(x)-n+1, nchar(x))
-}
-motherPart <- substrRight(testerSplit[1], 22)
-print(motherPart)
+noquote(testerSplit)
+#strip all father names (which are numbers)
+fatherName <- as.numeric(gsub("\\D", "", testerSplit))
+noquote(fatherName)
+#count that length of numbers, for calculation later on
+fatherLength <- nchar(fatherName[1])
+noquote(fatherLength)
+motherName <- as.character(gsub('[^[:alnum:]]', "",  testerSplit))
+noquote(motherName)
+motherLength <- nchar(motherName)
+noquote(motherLength)
+motherName <- substring(motherName, 2, (motherLength - fatherLength))
+noquote(motherName)
+motherName <- unique(motherName)
+noquote(motherName)
+fatherName <- unique(fatherName)
+noquote(fatherName)
 ```
