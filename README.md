@@ -5,7 +5,7 @@ date: "5 December 2016"
 output: html_document
 ---
 
-## R Markdown
+## ShinyPSASorterInterim
 
 This is an R Markdown document written for the ShinySorter application, based from the VBScript written by Harrison Crane. It helps gives easier viewing of data of PSA death in the plantations here at PFR, allowing for those users to find the successful crosses of plants, and to cull those less successful crosses.
 
