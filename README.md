@@ -13,7 +13,7 @@ This is an interim release prior to the development of the Online Shiny release.
 
 email: Harrison.crane@plantandfood.co.nz
 
-## VBScript release (use Excel format, .xlsx)
+## VBScript release (.csv (preferred), .xlsx)
 
 To install the VBScript of ShinyPSASorter, please follow the tutorial pictures in this link.
 
