@@ -13,5 +13,10 @@ uniqueCouple <- levels(test[1, "BrCrCode"])
 uniqueCoupleSize <- length(uniqueCouple)
 print(uniqueCoupleSize)
 testerSplit <- strsplit(levels(test[uniqueCouple, "BrCrCode"]), "[_]")
-print(testerSplit)
+print(testerSplit)[1]
+substrRight <- function(x, n){
+  substr(x, nchar(x)-n+1, nchar(x))
+}
+motherPart <- substrRight(testerSplit[1], 22)
+print(motherPart)
 ```
