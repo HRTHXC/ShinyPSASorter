@@ -11,6 +11,7 @@ rowCount <- nrow(test)
 print(rowCount)
 uniqueCouple <- levels(test[1, "BrCrCode"])
 uniqueCoupleSize <- length(uniqueCouple)
+print(uniqueCouple)
 print(uniqueCoupleSize)
 #split the string
 testerSplit <- strsplit(levels(test[uniqueCouple, "BrCrCode"]), "[_]")
@@ -31,4 +32,7 @@ motherName <- unique(motherName)
 noquote(motherName)
 fatherName <- unique(fatherName)
 noquote(fatherName)
+
+table = matrix(c(), nrow=fatherLength-1, ncol=motherLength-1)
+noquote(table)
 ```

@@ -128,7 +128,10 @@ print(rowCount)</code></pre>
 <pre><code>## [1] 25</code></pre>
 <pre class="r"><code>uniqueCouple &lt;- levels(test[1, &quot;BrCrCode&quot;])
 uniqueCoupleSize &lt;- length(uniqueCouple)
-print(uniqueCoupleSize)</code></pre>
+print(uniqueCouple)</code></pre>
+<pre><code>## [1] &quot;rJR_225&quot; &quot;rJR_227&quot; &quot;rJR_375&quot; &quot;rJR_376&quot; &quot;rJR_377&quot; &quot;rJR_380&quot; &quot;rKG_225&quot;
+## [8] &quot;rKG_227&quot;</code></pre>
+<pre class="r"><code>print(uniqueCoupleSize)</code></pre>
 <pre><code>## [1] 8</code></pre>
 <pre class="r"><code>#split the string
 testerSplit &lt;- strsplit(levels(test[uniqueCouple, &quot;BrCrCode&quot;]), &quot;[_]&quot;)
@@ -179,6 +182,11 @@ noquote(motherName)</code></pre>
 <pre class="r"><code>fatherName &lt;- unique(fatherName)
 noquote(fatherName)</code></pre>
 <pre><code>## [1] 225 227 375 376 377 380</code></pre>
+<pre class="r"><code>table = matrix(c(1,1,1,1,1,1), nrow=fatherLength-1, ncol=motherLength-1)
+noquote(table)</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    1    1    1    1    1
+## [2,]    1    1    1    1    1    1</code></pre>
 
 
 
