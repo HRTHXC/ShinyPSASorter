@@ -1,0 +1,17 @@
+---
+title: "ShinyPSASorterInterim"
+author: "Harrison Crane"
+date: "5 December 2016"
+output: html_document
+---
+
+```{r sampleCode}
+test <- read.csv(file.choose(), header = TRUE)
+rowCount <- nrow(test)
+print(rowCount)
+uniqueCouple <- levels(test[1, "BrCrCode"])
+uniqueCoupleSize <- length(uniqueCouple)
+print(uniqueCoupleSize)
+testerSplit <- strsplit(levels(test[uniqueCouple, "BrCrCode"]), "[_]")
+print(testerSplit)
+```
