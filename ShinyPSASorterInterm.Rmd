@@ -38,6 +38,7 @@ fatherUniques <- length(fatherName)
 noquote(fatherUniques)
 visibleOutputDebug <- 0
 endTablePrintout <- 0
+overallUniques <- 1
 for (i in 1:motherUniques){
   for (j in 1:fatherUniques){
     psaDeath <- 0
@@ -58,34 +59,29 @@ for (i in 1:motherUniques){
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
     #if we couldn't calculate an average before, ignore it
     if(planted == 0){
-      visibleOutputDebug <- "NA"
+      visibleOutputDebug[overallUniques] <-  "NA"
     }
     #values under 40 are discarded, but still printed out (sample too small)
     else if(planted < 40 & !(planted == 0)){
-      visibleOutputDebug <- paste(psaDeath, planted, "STS", lifeRate, sep = " / ")
+      visibleOutputDebug[overallUniques] <- paste(lifeRate, "STS")
     }
     #otherwise, lets print it out, we can use the values later for calculating means
     else{
-      visibleOutputDebug <- paste(psaDeath, planted, lifeRate, sep = " / ")
+      visibleOutputDebug[overallUniques] <- lifeRate
     }
-    print(visibleOutputDebug)
-    
-    if(fatherUniques == 1){
-      endTablePrintout <- paste(visibleOutputDebug, sep = ', ')
-    }
-    else{
-      endTablePrintout <- paste(endTablePrintout, paste(visibleOutputDebug), sep = ', ')
-    }
+    overallUniques <- overallUniques + 1
   }
 }
+print(visibleOutputDebug)
+print(motherUniques)
+print(fatherUniques)
 #endTablePrintout <- paste(endTablePrintout, '"')
-printoutLength <- nchar(endTablePrintout)
+#printoutLength <- nchar(endTablePrintout)
 #print(printoutLength)
-endTablePrintout <- substring(endTablePrintout, 3, printoutLength)
-noquote(endTablePrintout)
+#endTablePrintout <- substring(endTablePrintout, 3, printoutLength)
+#noquote(endTablePrintout)
 #test with outputting to .csv
 #write.csv(endTablePrintout, file="output.csv")
-
-table = matrix(c(endTablePrintout), nrow=fatherLength-1, ncol=motherLength-1)
+table <- matrix(visibleOutputDebug, nrow=motherLength-1, ncol=fatherLength-1, dimnames = list(fatherName, motherName))
 noquote(table)
 ```

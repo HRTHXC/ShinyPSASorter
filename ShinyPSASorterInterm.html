@@ -190,6 +190,7 @@ noquote(fatherUniques)</code></pre>
 <pre><code>## [1] 6</code></pre>
 <pre class="r"><code>visibleOutputDebug &lt;- 0
 endTablePrintout &lt;- 0
+overallUniques &lt;- 1
 for (i in 1:motherUniques){
   for (j in 1:fatherUniques){
     psaDeath &lt;- 0
@@ -208,65 +209,45 @@ for (i in 1:motherUniques){
     #create a vector for me!
     lifeRate &lt;- (100 - ((psaDeath / planted) * 100))
     lifeRate &lt;- format(round(lifeRate, 2), nsmall = 2)
+    #if we couldn't calculate an average before, ignore it
     if(planted == 0){
-      visibleOutputDebug &lt;- &quot;NA&quot;
+      visibleOutputDebug[overallUniques] &lt;-  &quot;NA&quot;
     }
+    #values under 40 are discarded, but still printed out (sample too small)
     else if(planted &lt; 40 &amp; !(planted == 0)){
-      visibleOutputDebug &lt;- paste(psaDeath, planted, &quot;STS&quot;, lifeRate, sep = &quot; / &quot;)
+      visibleOutputDebug[overallUniques] &lt;- paste(lifeRate, &quot;STS&quot;)
     }
+    #otherwise, lets print it out, we can use the values later for calculating means
     else{
-      visibleOutputDebug &lt;- paste(psaDeath, planted, lifeRate, sep = &quot; / &quot;)
+      visibleOutputDebug[overallUniques] &lt;- lifeRate
     }
-    print(visibleOutputDebug)
-    if(fatherUniques == 1){
-      endTablePrintout &lt;- paste(visibleOutputDebug, sep = ', ')
-    }
-    else{
-      endTablePrintout &lt;- paste(endTablePrintout, paste(visibleOutputDebug), sep = ', ')
-    }
+    overallUniques &lt;- overallUniques + 1
   }
-}</code></pre>
-<pre><code>## [1] &quot;12 / 20 / STS / 40.00&quot;
-## [1] &quot;102 / 136 / 25.00&quot;
-## [1] &quot;90 / 119 / 24.37&quot;
-## [1] &quot;45 / 68 / 33.82&quot;
-## [1] &quot;113 / 137 / 17.52&quot;
-## [1] &quot;41 / 91 / 54.95&quot;
-## [1] &quot;237 / 292 / 18.84&quot;
-## [1] &quot;255 / 313 / 18.53&quot;
-## [1] &quot;NA&quot;
-## [1] &quot;NA&quot;
-## [1] &quot;NA&quot;
-## [1] &quot;NA&quot;</code></pre>
+}
+print(visibleOutputDebug)</code></pre>
+<pre><code>##  [1] &quot;40.00 STS&quot; &quot;25.00&quot;     &quot;24.37&quot;     &quot;33.82&quot;     &quot;17.52&quot;    
+##  [6] &quot;54.95&quot;     &quot;18.84&quot;     &quot;18.53&quot;     &quot;NA&quot;        &quot;NA&quot;       
+## [11] &quot;NA&quot;        &quot;NA&quot;</code></pre>
+<pre class="r"><code>print(motherUniques)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>print(fatherUniques)</code></pre>
+<pre><code>## [1] 6</code></pre>
 <pre class="r"><code>#endTablePrintout &lt;- paste(endTablePrintout, '&quot;')
-printoutLength &lt;- nchar(endTablePrintout)
+#printoutLength &lt;- nchar(endTablePrintout)
 #print(printoutLength)
-endTablePrintout &lt;- substring(endTablePrintout, 3, printoutLength)
-noquote(endTablePrintout)</code></pre>
-<pre><code>## [1]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA</code></pre>
-<pre class="r"><code>#test with outputting to .csv
+#endTablePrintout &lt;- substring(endTablePrintout, 3, printoutLength)
+#noquote(endTablePrintout)
+#test with outputting to .csv
 #write.csv(endTablePrintout, file=&quot;output.csv&quot;)
-
-table = matrix(c(endTablePrintout), nrow=fatherLength-1, ncol=motherLength-1)
+table &lt;- matrix(visibleOutputDebug, nrow=motherLength-1, ncol=fatherLength-1, dimnames = list(fatherName, motherName))
 noquote(table)</code></pre>
-<pre><code>##      [,1]                                                                                                                                                                  
-## [1,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-## [2,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-##      [,2]                                                                                                                                                                  
-## [1,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-## [2,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-##      [,3]                                                                                                                                                                  
-## [1,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-## [2,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-##      [,4]                                                                                                                                                                  
-## [1,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-## [2,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-##      [,5]                                                                                                                                                                  
-## [1,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-## [2,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-##      [,6]                                                                                                                                                                  
-## [1,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA
-## [2,]  12 / 20 / STS / 40.00, 102 / 136 / 25.00, 90 / 119 / 24.37, 45 / 68 / 33.82, 113 / 137 / 17.52, 41 / 91 / 54.95, 237 / 292 / 18.84, 255 / 313 / 18.53, NA, NA, NA, NA</code></pre>
+<pre><code>##     rJR       rKG  
+## 225 40.00 STS 18.84
+## 227 25.00     18.53
+## 375 24.37     NA   
+## 376 33.82     NA   
+## 377 17.52     NA   
+## 380 54.95     NA</code></pre>
 
 
 
