@@ -79,6 +79,6 @@ print(printoutLength)
 endTablePrintout <- substring(endTablePrintout, 3, printoutLength)
 print(endTablePrintout)
 
-table = matrix(c(,endTablePrintout), nrow=fatherLength-1, ncol=motherLength-1)
+table = matrix(c(endTablePrintout), nrow=fatherLength-1, ncol=motherLength-1)
 noquote(table)
 ```
