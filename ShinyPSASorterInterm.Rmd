@@ -32,7 +32,25 @@ motherName <- unique(motherName)
 noquote(motherName)
 fatherName <- unique(fatherName)
 noquote(fatherName)
+motherUniques <- length(motherName)
+noquote(motherUniques)
+fatherUniques <- length(fatherName)
+noquote(fatherUniques)
 
-table = matrix(c(), nrow=fatherLength-1, ncol=motherLength-1)
-noquote(table)
+for (i in 1:motherUniques){
+  for (j in 1:fatherUniques){
+    searching <- paste(motherName[i], fatherName[j], sep = "_")
+    print(searching)
+    for (k in 1:rowCount){
+      testingValue <- test[k, "BrCrCode"]
+      print(testingValue)
+      if(searching == testingValue){
+        print("match found")
+      }
+    }
+  }
+}
+
+#table = matrix(c(), nrow=fatherLength-1, ncol=motherLength-1)
+#noquote(table)
 ```

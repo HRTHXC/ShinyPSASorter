@@ -182,11 +182,664 @@ noquote(motherName)</code></pre>
 <pre class="r"><code>fatherName &lt;- unique(fatherName)
 noquote(fatherName)</code></pre>
 <pre><code>## [1] 225 227 375 376 377 380</code></pre>
-<pre class="r"><code>table = matrix(c(1,1,1,1,1,1), nrow=fatherLength-1, ncol=motherLength-1)
-noquote(table)</code></pre>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]    1    1    1    1    1    1
-## [2,]    1    1    1    1    1    1</code></pre>
+<pre class="r"><code>motherUniques &lt;- length(motherName)
+noquote(motherUniques)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>fatherUniques &lt;- length(fatherName)
+noquote(fatherUniques)</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre class="r"><code>for (i in 1:motherUniques){
+  for (j in 1:fatherUniques){
+    searching &lt;- paste(motherName[i], fatherName[j], sep = &quot;_&quot;)
+    print(searching)
+    for (k in 1:rowCount){
+      testingValue &lt;- test[k, &quot;BrCrCode&quot;]
+      print(testingValue)
+      if(searching == testingValue){
+        print(&quot;match found&quot;)
+      }
+    }
+  }
+}</code></pre>
+<pre><code>## [1] &quot;rJR_225&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rJR_227&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rJR_375&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rJR_376&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rJR_377&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rJR_380&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rKG_225&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rKG_227&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;match found&quot;
+## [1] &quot;rKG_375&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rKG_376&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rKG_377&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] &quot;rKG_380&quot;
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_375
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_376
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_377
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rJR_380
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_225
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227
+## [1] rKG_227
+## 8 Levels: rJR_225 rJR_227 rJR_375 rJR_376 rJR_377 rJR_380 ... rKG_227</code></pre>
+<pre class="r"><code>#table = matrix(c(), nrow=fatherLength-1, ncol=motherLength-1)
+#noquote(table)</code></pre>
 
 
 
