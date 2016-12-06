@@ -39,15 +39,23 @@ noquote(fatherUniques)
 
 for (i in 1:motherUniques){
   for (j in 1:fatherUniques){
+    psaDeath <- 0
+    planted <- 0
+    lifeRate <- 0
     searching <- paste(motherName[i], fatherName[j], sep = "_")
-    print(searching)
+    #print(searching)
     for (k in 1:rowCount){
       testingValue <- test[k, "BrCrCode"]
-      print(testingValue)
+      #print(testingValue)
       if(searching == testingValue){
-        print("match found")
+        psaDeath <- (psaDeath + test[k, "PsaDeaths"])
+        planted <- (planted + test[k, "Planted"])
       }
     }
+    #create a vector for me!
+    lifeRate <- (100 - ((psaDeath / planted) * 100))
+    lifeRate <- format(round(lifeRate, 2), nsmall = 2)
+    print(lifeRate)
   }
 }
 
