@@ -36,7 +36,8 @@ motherUniques <- length(motherName)
 noquote(motherUniques)
 fatherUniques <- length(fatherName)
 noquote(fatherUniques)
-
+visibleOutputDebug <- 0
+endTablePrintout <- 0
 for (i in 1:motherUniques){
   for (j in 1:fatherUniques){
     psaDeath <- 0
@@ -55,10 +56,29 @@ for (i in 1:motherUniques){
     #create a vector for me!
     lifeRate <- (100 - ((psaDeath / planted) * 100))
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
-    print(lifeRate)
+    if(planted == 0){
+      visibleOutputDebug <- "NA"
+    }
+    else if(planted < 40 & !(planted == 0)){
+      visibleOutputDebug <- paste(psaDeath, planted, "STS", lifeRate, sep = " / ")
+    }
+    else{
+      visibleOutputDebug <- paste(psaDeath, planted, lifeRate, sep = " / ")
+    }
+    print(visibleOutputDebug)
+    if(fatherUniques == 1){
+      endTablePrintout <- paste(visibleOutputDebug, sep = ",")
+    }
+    else{
+      endTablePrintout <- paste(endTablePrintout, paste(visibleOutputDebug), sep = ", ")
+    }
   }
 }
+printoutLength <- nchar(endTablePrintout)
+print(printoutLength)
+endTablePrintout <- substring(endTablePrintout, 3, printoutLength)
+print(endTablePrintout)
 
-#table = matrix(c(), nrow=fatherLength-1, ncol=motherLength-1)
-#noquote(table)
+table = matrix(c(,endTablePrintout), nrow=fatherLength-1, ncol=motherLength-1)
+noquote(table)
 ```
