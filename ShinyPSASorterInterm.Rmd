@@ -67,10 +67,10 @@ for (i in 1:motherUniques){
     }
     print(visibleOutputDebug)
     if(fatherUniques == 1){
-      endTablePrintout <- paste(visibleOutputDebug, sep = ",")
+      endTablePrintout <- paste(visibleOutputDebug, sep = '", "')
     }
     else{
-      endTablePrintout <- paste(endTablePrintout, paste(visibleOutputDebug), sep = ", ")
+      endTablePrintout <- paste(endTablePrintout, paste(visibleOutputDebug), sep = '", "')
     }
   }
 }
@@ -78,7 +78,9 @@ printoutLength <- nchar(endTablePrintout)
 print(printoutLength)
 endTablePrintout <- substring(endTablePrintout, 3, printoutLength)
 print(endTablePrintout)
+#test with outputting to .csv
+write.csv(endTablePrintout, file="output.csv")
 
-table = matrix(c(endTablePrintout), nrow=fatherLength-1, ncol=motherLength-1)
-noquote(table)
+#table = matrix(c(endTablePrintout), nrow=fatherLength-1, ncol=motherLength-1)
+#noquote(table)
 ```
