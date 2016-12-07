@@ -95,8 +95,10 @@ planted <- 0
 lifeRate <- 0
 overallUniques <- 0
 plantedPreCalc <- 0
+finalString <- ""
 outputString <- ""
-meanColumnNames <- paste("Father Name", "PSA Death", "Planted", "Average Alive")
+meanColumnNames <- paste("PSADeath", "Planted", "AverageAlive")
+print(meanColumnNames)
 #calculate mean for those father parings
 for(i in 1:fatherUniques){
   psaDeath <- 0
@@ -114,12 +116,15 @@ for(i in 1:fatherUniques){
     psaDeath <- psaDeath + psaDeathDebug[currentIndex]
     lifeRate <- (100 - ((psaDeath / planted) * 100))
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
-    lifeRate <- paste(lifeRate, "%")
+    #lifeRate <- paste(lifeRate, "%")
   }
-  outputString[i] <- paste(fatherName[i], psaDeath, planted, lifeRate, sep = ":")
-  fatherNameMeanTable <- matrix(outputString, nrow=fatherLength-1, ncol=4, dimnames = list(fatherName, meanColumnNames))
-  noquote(fatherNameMeanTable)
+  outputString[i] <- paste(psaDeath, planted, lifeRate)
+  finalString <- paste(finalString, outputString[i])
+  print(outputString[i])
 }
+print(finalString)
+fatherNameMeanTable <- matrix(outputString, dimnames = list(fatherName, meanColumnNames))
+noquote(fatherNameMeanTable)
 #calculate mean for those mother parings
 for(i in 1:motherUniques){
   psaDeath <- 0
@@ -139,6 +144,6 @@ for(i in 1:motherUniques){
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
     lifeRate <- paste(lifeRate, "%")
   }
-  outputString[i] <- paste(motherName[i], psaDeath, planted, lifeRate, sep = ":")
+  #outputString[i] <- paste(motherName[i], psaDeath, planted, lifeRate, sep = ":")
 }
 ```
