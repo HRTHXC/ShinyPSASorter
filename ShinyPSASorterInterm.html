@@ -189,6 +189,8 @@ noquote(motherUniques)</code></pre>
 noquote(fatherUniques)</code></pre>
 <pre><code>## [1] 6</code></pre>
 <pre class="r"><code>visibleOutputDebug &lt;- 0
+psaDeathDebug &lt;- 0
+plantedDebug &lt;- 0
 endTablePrintout &lt;- 0
 overallUniques &lt;- 1
 for (i in 1:motherUniques){
@@ -203,7 +205,9 @@ for (i in 1:motherUniques){
       #print(testingValue)
       if(searching == testingValue){
         psaDeath &lt;- (psaDeath + test[k, &quot;PsaDeaths&quot;])
+        psaDeathDebug[overallUniques] &lt;- psaDeath
         planted &lt;- (planted + test[k, &quot;Planted&quot;])
+        plantedDebug[overallUniques] &lt;- planted
       }
     }
     #create a vector for me!
@@ -224,7 +228,11 @@ for (i in 1:motherUniques){
     overallUniques &lt;- overallUniques + 1
   }
 }
-print(visibleOutputDebug)</code></pre>
+print(psaDeathDebug)</code></pre>
+<pre><code>## [1]  12 102  90  45 113  41 237 255</code></pre>
+<pre class="r"><code>print(plantedDebug)</code></pre>
+<pre><code>## [1]  20 136 119  68 137  91 292 313</code></pre>
+<pre class="r"><code>print(visibleOutputDebug)</code></pre>
 <pre><code>##  [1] &quot;40.00 STS&quot; &quot;25.00&quot;     &quot;24.37&quot;     &quot;33.82&quot;     &quot;17.52&quot;    
 ##  [6] &quot;54.95&quot;     &quot;18.84&quot;     &quot;18.53&quot;     &quot;NA&quot;        &quot;NA&quot;       
 ## [11] &quot;NA&quot;        &quot;NA&quot;</code></pre>
@@ -248,6 +256,23 @@ noquote(table)</code></pre>
 ## 376 33.82     NA   
 ## 377 17.52     NA   
 ## 380 54.95     NA</code></pre>
+<pre class="r"><code>psaDeath &lt;- 0
+planted &lt;- 0
+lifeRate &lt;- 0
+outputString &lt;- &quot;&quot;
+#calculate mean for those father parings
+for(i in 1:fatherUniques){
+  for(j in 1:motherUniques){
+    #outputString &lt;- paste(fatherName[fatherUniques], psaDeath, planted
+    
+  }
+}
+#calculate mean for those mother parings
+for(i in 1:motherUniques){
+  for(j in 1:fatherUniques){
+    
+  }
+}</code></pre>
 
 
 

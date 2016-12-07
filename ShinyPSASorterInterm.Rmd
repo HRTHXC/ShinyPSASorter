@@ -37,6 +37,8 @@ noquote(motherUniques)
 fatherUniques <- length(fatherName)
 noquote(fatherUniques)
 visibleOutputDebug <- 0
+psaDeathDebug <- 0
+plantedDebug <- 0
 endTablePrintout <- 0
 overallUniques <- 1
 for (i in 1:motherUniques){
@@ -51,7 +53,9 @@ for (i in 1:motherUniques){
       #print(testingValue)
       if(searching == testingValue){
         psaDeath <- (psaDeath + test[k, "PsaDeaths"])
+        psaDeathDebug[overallUniques] <- psaDeath
         planted <- (planted + test[k, "Planted"])
+        plantedDebug[overallUniques] <- planted
       }
     }
     #create a vector for me!
@@ -72,6 +76,8 @@ for (i in 1:motherUniques){
     overallUniques <- overallUniques + 1
   }
 }
+print(psaDeathDebug)
+print(plantedDebug)
 print(visibleOutputDebug)
 print(motherUniques)
 print(fatherUniques)
@@ -84,4 +90,26 @@ print(fatherUniques)
 #write.csv(endTablePrintout, file="output.csv")
 table <- matrix(visibleOutputDebug, nrow=motherLength-1, ncol=fatherLength-1, dimnames = list(fatherName, motherName))
 noquote(table)
+psaDeath <- 0
+planted <- 0
+lifeRate <- 0
+outputString <- ""
+#calculate mean for those father parings
+for(i in 1:fatherUniques){
+  outputString <- ""
+  for(j in 1:motherUniques){
+    planted <- planted + plantedDebug[overallUniques]
+    psaDeath <- psaDeath + psaDeathDebug[overallUniques]
+    lifeRate <- (100 - ((psaDeath / planted) * 100))
+  }
+  outputString <- paste(fatherName[fatherUniques], psaDeath, planted, percent(lifeRate), sep = ":")
+}
+noquote(outputString)
+#calculate mean for those mother parings
+for(i in 1:motherUniques){
+  for(j in 1:fatherUniques){
+    
+  }
+}
+
 ```
