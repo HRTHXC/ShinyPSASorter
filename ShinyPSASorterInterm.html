@@ -266,15 +266,14 @@ for(i in 1:fatherUniques){
   psaDeath &lt;- 0
   planted &lt;- 0
   lifeRate &lt;- 0
-  overallUniques &lt;- 0
+  currentIndex &lt;- 0
   outputString &lt;- &quot;&quot;
   for(j in 1:motherUniques){
-    overallUniques &lt;- overallUniques + 1
-    if(visibleOutputDebug[i] == &quot;NA&quot;){
-      next
-    }
-    planted &lt;- planted + plantedDebug[overallUniques]
-    psaDeath &lt;- psaDeath + psaDeathDebug[overallUniques]
+    currentIndex &lt;- (((j-1)*fatherUniques)+i)
+    planted &lt;- planted + plantedDebug[currentIndex]
+    psaDeath &lt;- psaDeath + psaDeathDebug[currentIndex]
+    print(planted)
+    print(psaDeath)
     lifeRate &lt;- (100 - ((psaDeath / planted) * 100))
     lifeRate &lt;- format(round(lifeRate, 2), nsmall = 2)
     lifeRate &lt;- paste(lifeRate, &quot;%&quot;)
@@ -282,21 +281,38 @@ for(i in 1:fatherUniques){
   outputString[i] &lt;- paste(fatherName[i], psaDeath[fatherUniques], planted[fatherUniques], lifeRate, sep = &quot;:&quot;)
   print(outputString)
 }</code></pre>
-<pre><code>## [1] &quot;225:NA:NA:26.92 %&quot;
-## [1] &quot;&quot;                  &quot;227:NA:NA:26.92 %&quot;
-## [1] &quot;&quot;                  NA                  &quot;375:NA:NA:26.92 %&quot;
-## [1] &quot;&quot;                  NA                  NA                 
-## [4] &quot;376:NA:NA:26.92 %&quot;
-## [1] &quot;&quot;                  NA                  NA                 
-## [4] NA                  &quot;377:NA:NA:26.92 %&quot;
-## [1] &quot;&quot;                  NA                  NA                 
-## [4] NA                  NA                  &quot;380:NA:NA:26.92 %&quot;</code></pre>
-<pre class="r"><code>#calculate mean for those mother parings
-for(i in 1:motherUniques){
-  for(j in 1:fatherUniques){
-    
-  }
-}</code></pre>
+<pre><code>## [1] 20
+## [1] 12
+## [1] 312
+## [1] 249
+## [1] &quot;225:NA:NA:20.19 %&quot;
+## [1] 136
+## [1] 102
+## [1] 449
+## [1] 357
+## [1] &quot;&quot;                  &quot;227:NA:NA:20.49 %&quot;
+## [1] 119
+## [1] 90
+## [1] NA
+## [1] NA
+## [1] &quot;&quot;               NA               &quot;375:NA:NA:NA %&quot;
+## [1] 68
+## [1] 45
+## [1] NA
+## [1] NA
+## [1] &quot;&quot;               NA               NA               &quot;376:NA:NA:NA %&quot;
+## [1] 137
+## [1] 113
+## [1] NA
+## [1] NA
+## [1] &quot;&quot;               NA               NA               NA              
+## [5] &quot;377:NA:NA:NA %&quot;
+## [1] 91
+## [1] 41
+## [1] NA
+## [1] NA
+## [1] &quot;&quot;               NA               NA               NA              
+## [5] NA               &quot;380:NA:NA:NA %&quot;</code></pre>
 
 
 
