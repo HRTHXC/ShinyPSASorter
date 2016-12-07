@@ -17,17 +17,17 @@ print(uniqueCoupleSize)
 testerSplit <- strsplit(levels(test[uniqueCouple, "BrCrCode"]), "[_]")
 noquote(testerSplit)
 #strip all father names (which are numbers)
-fatherName <- as.numeric(gsub("\\D", "", testerSplit))
+fatherName <- sapply(testerSplit, function(x)as.numeric(x[[2]]))
 noquote(fatherName)
 #count that length of numbers, for calculation later on
 fatherLength <- nchar(fatherName[1])
 noquote(fatherLength)
-motherName <- as.character(gsub('[^[:alnum:]]', "",  testerSplit))
+motherName <- sapply(testerSplit, function(x)x[[1]])
 noquote(motherName)
 motherLength <- nchar(motherName)
 noquote(motherLength)
-motherName <- substring(motherName, 2, (motherLength - fatherLength))
-noquote(motherName)
+#motherName <- substring(motherName, 2, (motherLength - fatherLength))
+#noquote(motherName)
 motherName <- unique(motherName)
 noquote(motherName)
 fatherName <- unique(fatherName)
@@ -97,7 +97,7 @@ overallUniques <- 0
 plantedPreCalc <- 0
 finalString <- ""
 outputString <- ""
-meanColumnNames <- paste("PSADeath", "Planted", "AverageAlive")
+meanColumnNames <- paste("FatherName", "PSADeath", "Planted", "AverageAlive")
 print(meanColumnNames)
 #calculate mean for those father parings
 for(i in 1:fatherUniques){
@@ -112,19 +112,20 @@ for(i in 1:fatherUniques){
     if(is.na(plantedDebug[currentIndex])){
       next
     }
-    planted[i] <- planted + plantedDebug[currentIndex]
-    psaDeath[i] <- psaDeath + psaDeathDebug[currentIndex]
+    planted <- planted + plantedDebug[currentIndex]
+    psaDeath <- psaDeath + psaDeathDebug[currentIndex]
     lifeRate <- (100 - ((psaDeath / planted) * 100))
-    lifeRate[i] <- format(round(lifeRate, 2), nsmall = 2)
+    lifeRate <- format(round(lifeRate, 2), nsmall = 2)
+    fatherNameMeanTable <- data.frame(fatherName, planted, psaDeath, lifeRate)
     #lifeRate <- paste(lifeRate, "%")
   }
-  outputString[i] <- paste(psaDeath, planted, lifeRate)
+  #outputString[i] <- paste(fatherName, psaDeath, planted, lifeRate)
   #finalString <- paste(finalString, outputString[i])
-  print(outputString[i])
-  fatherNameMeanTable <- data.frame(planted, psaDeath, lifeRate)
+  #print(outputString[i])
 }
+print(planted)
 print(dim(fatherNameMeanTable))
-print(as.data.frame.matrix(fatherNameMeanTable[1:fatherUniques, ]))
+print(as.data.frame.matrix(fatherNameMeanTable[1:fatherUniques, 1:4]))
 #calculate mean for those mother parings
 for(i in 1:motherUniques){
   psaDeath <- 0

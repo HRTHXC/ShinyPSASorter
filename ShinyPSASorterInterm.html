@@ -160,7 +160,7 @@ noquote(testerSplit)</code></pre>
 ## [[8]]
 ## [1] rKG 227</code></pre>
 <pre class="r"><code>#strip all father names (which are numbers)
-fatherName &lt;- as.numeric(gsub(&quot;\\D&quot;, &quot;&quot;, testerSplit))
+fatherName &lt;- sapply(testerSplit, function(x)as.numeric(x[[2]]))
 noquote(fatherName)</code></pre>
 <pre><code>## [1] 225 227 375 376 377 380 225 227</code></pre>
 <pre class="r"><code>#count that length of numbers, for calculation later on
@@ -263,9 +263,9 @@ overallUniques &lt;- 0
 plantedPreCalc &lt;- 0
 finalString &lt;- &quot;&quot;
 outputString &lt;- &quot;&quot;
-meanColumnNames &lt;- paste(&quot;PSADeath&quot;, &quot;Planted&quot;, &quot;AverageAlive&quot;)
+meanColumnNames &lt;- paste(&quot;FatherName&quot;, &quot;PSADeath&quot;, &quot;Planted&quot;, &quot;AverageAlive&quot;)
 print(meanColumnNames)</code></pre>
-<pre><code>## [1] &quot;PSADeath Planted AverageAlive&quot;</code></pre>
+<pre><code>## [1] &quot;FatherName PSADeath Planted AverageAlive&quot;</code></pre>
 <pre class="r"><code>#calculate mean for those father parings
 for(i in 1:fatherUniques){
   psaDeath &lt;- 0
@@ -279,63 +279,29 @@ for(i in 1:fatherUniques){
     if(is.na(plantedDebug[currentIndex])){
       next
     }
-    planted[i] &lt;- planted + plantedDebug[currentIndex]
-    psaDeath[i] &lt;- psaDeath + psaDeathDebug[currentIndex]
+    planted &lt;- planted + plantedDebug[currentIndex]
+    psaDeath &lt;- psaDeath + psaDeathDebug[currentIndex]
     lifeRate &lt;- (100 - ((psaDeath / planted) * 100))
-    lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2)
+    lifeRate &lt;- format(round(lifeRate, 2), nsmall = 2)
+    fatherNameMeanTable &lt;- data.frame(fatherName, planted, psaDeath, lifeRate)
     #lifeRate &lt;- paste(lifeRate, &quot;%&quot;)
   }
-  outputString[i] &lt;- paste(psaDeath, planted, lifeRate)
+  #outputString[i] &lt;- paste(fatherName, psaDeath, planted, lifeRate)
   #finalString &lt;- paste(finalString, outputString[i])
-  print(outputString[i])
-  fatherNameMeanTable &lt;- data.frame(planted, psaDeath, lifeRate)
-}</code></pre>
-<pre><code>## [1] &quot;249 312 20.19&quot;</code></pre>
-<pre><code>## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## Warning in planted[i] &lt;- planted + plantedDebug[currentIndex]: number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## Warning in psaDeath[i] &lt;- psaDeath + psaDeathDebug[currentIndex]: number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## Warning in outputString[i] &lt;- paste(psaDeath, planted, lifeRate): number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## [1] &quot;0 0 NaN&quot;</code></pre>
-<pre><code>## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length
-
-## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## [1] &quot;0 0 NaN&quot;</code></pre>
-<pre><code>## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length
-
-## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## [1] &quot;0 0 NaN&quot;</code></pre>
-<pre><code>## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length
-
-## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## [1] &quot;0 0 NaN&quot;</code></pre>
-<pre><code>## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length
-
-## Warning in lifeRate[i] &lt;- format(round(lifeRate, 2), nsmall = 2): number of
-## items to replace is not a multiple of replacement length</code></pre>
-<pre><code>## [1] &quot;0 0 NaN&quot;</code></pre>
+  #print(outputString[i])
+}
+print(planted)</code></pre>
+<pre><code>## [1] 91</code></pre>
 <pre class="r"><code>print(dim(fatherNameMeanTable))</code></pre>
-<pre><code>## [1] 6 3</code></pre>
-<pre class="r"><code>print(as.data.frame.matrix(fatherNameMeanTable[1:fatherUniques, ]))</code></pre>
-<pre><code>##   planted psaDeath lifeRate
-## 1       0        0      NaN
-## 2      NA       NA     &lt;NA&gt;
-## 3      NA       NA     &lt;NA&gt;
-## 4      NA       NA     &lt;NA&gt;
-## 5      NA       NA     &lt;NA&gt;
-## 6      91       41      NaN</code></pre>
+<pre><code>## [1] 6 4</code></pre>
+<pre class="r"><code>print(as.data.frame.matrix(fatherNameMeanTable[1:fatherUniques, 1:4]))</code></pre>
+<pre><code>##   fatherName planted psaDeath lifeRate
+## 1        225      91       41    54.95
+## 2        227      91       41    54.95
+## 3        375      91       41    54.95
+## 4        376      91       41    54.95
+## 5        377      91       41    54.95
+## 6        380      91       41    54.95</code></pre>
 <pre class="r"><code>#calculate mean for those mother parings
 for(i in 1:motherUniques){
   psaDeath &lt;- 0
