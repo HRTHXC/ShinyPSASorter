@@ -88,14 +88,15 @@ print(fatherUniques)
 #noquote(endTablePrintout)
 #test with outputting to .csv
 #write.csv(endTablePrintout, file="output.csv")
-table <- matrix(visibleOutputDebug, nrow=motherLength-1, ncol=fatherLength-1, dimnames = list(fatherName, motherName))
-noquote(table)
+mainTable <- matrix(visibleOutputDebug, nrow=motherLength-1, ncol=fatherLength-1, dimnames = list(fatherName, motherName))
+noquote(mainTable)
 psaDeath <- 0
 planted <- 0
 lifeRate <- 0
 overallUniques <- 0
 plantedPreCalc <- 0
 outputString <- ""
+meanColumnNames <- paste("Father Name", "PSA Death", "Planted", "Average Alive")
 #calculate mean for those father parings
 for(i in 1:fatherUniques){
   psaDeath <- 0
@@ -116,7 +117,8 @@ for(i in 1:fatherUniques){
     lifeRate <- paste(lifeRate, "%")
   }
   outputString[i] <- paste(fatherName[i], psaDeath, planted, lifeRate, sep = ":")
-  print(outputString)
+  fatherNameMeanTable <- matrix(outputString, nrow=fatherLength-1, ncol=4, dimnames = list(fatherName, meanColumnNames))
+  noquote(fatherNameMeanTable)
 }
 #calculate mean for those mother parings
 for(i in 1:motherUniques){
@@ -138,6 +140,5 @@ for(i in 1:motherUniques){
     lifeRate <- paste(lifeRate, "%")
   }
   outputString[i] <- paste(motherName[i], psaDeath, planted, lifeRate, sep = ":")
-  print(outputString)
 }
 ```
