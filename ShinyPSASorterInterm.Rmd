@@ -94,6 +94,7 @@ psaDeath <- 0
 planted <- 0
 lifeRate <- 0
 overallUniques <- 0
+plantedPreCalc <- 0
 outputString <- ""
 #calculate mean for those father parings
 for(i in 1:fatherUniques){
@@ -101,19 +102,42 @@ for(i in 1:fatherUniques){
   planted <- 0
   lifeRate <- 0
   currentIndex <- 0
+  plantedPreCalc <- 0
   outputString <- ""
   for(j in 1:motherUniques){
     currentIndex <- (((j-1)*fatherUniques)+i)
+    if(is.na(plantedDebug[currentIndex])){
+      next
+    }
     planted <- planted + plantedDebug[currentIndex]
     psaDeath <- psaDeath + psaDeathDebug[currentIndex]
-    print(planted)
-    print(psaDeath)
     lifeRate <- (100 - ((psaDeath / planted) * 100))
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
     lifeRate <- paste(lifeRate, "%")
   }
-  outputString[i] <- paste(fatherName[i], psaDeath[fatherUniques], planted[fatherUniques], lifeRate, sep = ":")
+  outputString[i] <- paste(fatherName[i], psaDeath, planted, lifeRate, sep = ":")
   print(outputString)
 }
-
+#calculate mean for those mother parings
+for(i in 1:motherUniques){
+  psaDeath <- 0
+  planted <- 0
+  lifeRate <- 0
+  currentIndex <- 0
+  plantedPreCalc <- 0
+  outputString <- ""
+  for(j in 1:fatherUniques){
+    currentIndex <- (((i-1)*fatherUniques)+j)
+    if(is.na(plantedDebug[currentIndex])){
+      next
+    }
+    planted <- planted + plantedDebug[currentIndex]
+    psaDeath <- psaDeath + psaDeathDebug[currentIndex]
+    lifeRate <- (100 - ((psaDeath / planted) * 100))
+    lifeRate <- format(round(lifeRate, 2), nsmall = 2)
+    lifeRate <- paste(lifeRate, "%")
+  }
+  outputString[i] <- paste(motherName[i], psaDeath, planted, lifeRate, sep = ":")
+  print(outputString)
+}
 ```
