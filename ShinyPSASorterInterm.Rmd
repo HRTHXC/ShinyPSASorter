@@ -93,18 +93,29 @@ noquote(table)
 psaDeath <- 0
 planted <- 0
 lifeRate <- 0
+overallUniques <- 0
 outputString <- ""
 #calculate mean for those father parings
 for(i in 1:fatherUniques){
+  psaDeath <- 0
+  planted <- 0
+  lifeRate <- 0
+  overallUniques <- 0
   outputString <- ""
   for(j in 1:motherUniques){
+    overallUniques <- overallUniques + 1
+    if(visibleOutputDebug[i] == "NA"){
+      next
+    }
     planted <- planted + plantedDebug[overallUniques]
     psaDeath <- psaDeath + psaDeathDebug[overallUniques]
     lifeRate <- (100 - ((psaDeath / planted) * 100))
+    lifeRate <- format(round(lifeRate, 2), nsmall = 2)
+    lifeRate <- paste(lifeRate, "%")
   }
-  outputString <- paste(fatherName[fatherUniques], psaDeath, planted, percent(lifeRate), sep = ":")
+  outputString[i] <- paste(fatherName[i], psaDeath[fatherUniques], planted[fatherUniques], lifeRate, sep = ":")
+  print(outputString)
 }
-noquote(outputString)
 #calculate mean for those mother parings
 for(i in 1:motherUniques){
   for(j in 1:fatherUniques){

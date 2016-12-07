@@ -259,15 +259,39 @@ noquote(table)</code></pre>
 <pre class="r"><code>psaDeath &lt;- 0
 planted &lt;- 0
 lifeRate &lt;- 0
+overallUniques &lt;- 0
 outputString &lt;- &quot;&quot;
 #calculate mean for those father parings
 for(i in 1:fatherUniques){
+  psaDeath &lt;- 0
+  planted &lt;- 0
+  lifeRate &lt;- 0
+  overallUniques &lt;- 0
+  outputString &lt;- &quot;&quot;
   for(j in 1:motherUniques){
-    #outputString &lt;- paste(fatherName[fatherUniques], psaDeath, planted
-    
+    overallUniques &lt;- overallUniques + 1
+    if(visibleOutputDebug[i] == &quot;NA&quot;){
+      next
+    }
+    planted &lt;- planted + plantedDebug[overallUniques]
+    psaDeath &lt;- psaDeath + psaDeathDebug[overallUniques]
+    lifeRate &lt;- (100 - ((psaDeath / planted) * 100))
+    lifeRate &lt;- format(round(lifeRate, 2), nsmall = 2)
+    lifeRate &lt;- paste(lifeRate, &quot;%&quot;)
   }
-}
-#calculate mean for those mother parings
+  outputString[i] &lt;- paste(fatherName[i], psaDeath[fatherUniques], planted[fatherUniques], lifeRate, sep = &quot;:&quot;)
+  print(outputString)
+}</code></pre>
+<pre><code>## [1] &quot;225:NA:NA:26.92 %&quot;
+## [1] &quot;&quot;                  &quot;227:NA:NA:26.92 %&quot;
+## [1] &quot;&quot;                  NA                  &quot;375:NA:NA:26.92 %&quot;
+## [1] &quot;&quot;                  NA                  NA                 
+## [4] &quot;376:NA:NA:26.92 %&quot;
+## [1] &quot;&quot;                  NA                  NA                 
+## [4] NA                  &quot;377:NA:NA:26.92 %&quot;
+## [1] &quot;&quot;                  NA                  NA                 
+## [4] NA                  NA                  &quot;380:NA:NA:26.92 %&quot;</code></pre>
+<pre class="r"><code>#calculate mean for those mother parings
 for(i in 1:motherUniques){
   for(j in 1:fatherUniques){
     
