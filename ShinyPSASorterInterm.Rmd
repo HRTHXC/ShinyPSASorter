@@ -134,6 +134,18 @@ for(i in 1:fatherUniques){
 print(planted)
 print(dim(fatherNameMeanTable))
 print(as.data.frame.matrix(fatherNameMeanTable[1:fatherUniques, 1:4]))
+psaDeath <- 0
+overallPsaDeath <- ""
+planted <- 0
+overallPlanted <- ""
+lifeRate <- 0
+overallLifeRate <- ""
+overallUniques <- 0
+plantedPreCalc <- 0
+finalString <- ""
+outputString <- ""
+meanColumnNames <- paste("MotherName", "PSADeath", "Planted", "AverageAlive")
+print(meanColumnNames)
 #calculate mean for those mother parings
 for(i in 1:motherUniques){
   psaDeath <- 0
@@ -142,17 +154,40 @@ for(i in 1:motherUniques){
   currentIndex <- 0
   plantedPreCalc <- 0
   outputString <- ""
-  for(j in 1:fatherUniques){
-    currentIndex <- (((i-1)*fatherUniques)+j)
+  for(j in 1:motherUniques){
+    currentIndex <- (((i-1)*motherUniques)+j)
     if(is.na(plantedDebug[currentIndex])){
       next
     }
     planted <- planted + plantedDebug[currentIndex]
+    overallPlanted[i] <- planted
     psaDeath <- psaDeath + psaDeathDebug[currentIndex]
+    overallPsaDeath[i] <- psaDeath
     lifeRate <- (100 - ((psaDeath / planted) * 100))
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
-    lifeRate <- paste(lifeRate, "%")
+    overallLifeRate[i] <- lifeRate
+    print(overallPlanted)
+    #lifeRate <- paste(lifeRate, "%")
   }
-  #outputString[i] <- paste(motherName[i], psaDeath, planted, lifeRate, sep = ":")
+  motherNameMeanTable <- data.frame(motherName, overallPlanted = overallPlanted[1:motherUniques], overallPsaDeath = overallPsaDeath[1:motherUniques], overallLifeRate = overallLifeRate[1:motherUniques])
+  #outputString[i] <- paste(motherName, psaDeath, planted, lifeRate)
+  #finalString <- paste(finalString, outputString[i])
+  #print(outputString[i])
+}
+print(planted)
+print(dim(motherNameMeanTable))
+print(as.data.frame.matrix(motherNameMeanTable[1:motherUniques, 1:4]))
+
+clearMeanVariables <- function(){
+  psaDeath <- 0
+overallPsaDeath <- ""
+planted <- 0
+overallPlanted <- ""
+lifeRate <- 0
+overallLifeRate <- ""
+overallUniques <- 0
+plantedPreCalc <- 0
+finalString <- ""
+outputString <- ""
 }
 ```

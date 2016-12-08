@@ -318,6 +318,19 @@ for(i in 1:fatherUniques){
 ## 4        376             68              45           33.82
 ## 5        377            137             113           17.52
 ## 6        380             91              41           54.95</code></pre>
+<pre class="r"><code>psaDeath &lt;- 0
+overallPsaDeath &lt;- &quot;&quot;
+planted &lt;- 0
+overallPlanted &lt;- &quot;&quot;
+lifeRate &lt;- 0
+overallLifeRate &lt;- &quot;&quot;
+overallUniques &lt;- 0
+plantedPreCalc &lt;- 0
+finalString &lt;- &quot;&quot;
+outputString &lt;- &quot;&quot;
+meanColumnNames &lt;- paste(&quot;MotherName&quot;, &quot;PSADeath&quot;, &quot;Planted&quot;, &quot;AverageAlive&quot;)
+print(meanColumnNames)</code></pre>
+<pre><code>## [1] &quot;MotherName PSADeath Planted AverageAlive&quot;</code></pre>
 <pre class="r"><code>#calculate mean for those mother parings
 for(i in 1:motherUniques){
   psaDeath &lt;- 0
@@ -326,18 +339,49 @@ for(i in 1:motherUniques){
   currentIndex &lt;- 0
   plantedPreCalc &lt;- 0
   outputString &lt;- &quot;&quot;
-  for(j in 1:fatherUniques){
-    currentIndex &lt;- (((i-1)*fatherUniques)+j)
+  for(j in 1:motherUniques){
+    currentIndex &lt;- (((i-1)*motherUniques)+j)
     if(is.na(plantedDebug[currentIndex])){
       next
     }
     planted &lt;- planted + plantedDebug[currentIndex]
+    overallPlanted[i] &lt;- planted
     psaDeath &lt;- psaDeath + psaDeathDebug[currentIndex]
+    overallPsaDeath[i] &lt;- psaDeath
     lifeRate &lt;- (100 - ((psaDeath / planted) * 100))
     lifeRate &lt;- format(round(lifeRate, 2), nsmall = 2)
-    lifeRate &lt;- paste(lifeRate, &quot;%&quot;)
+    overallLifeRate[i] &lt;- lifeRate
+    print(overallPlanted)
+    #lifeRate &lt;- paste(lifeRate, &quot;%&quot;)
   }
-  #outputString[i] &lt;- paste(motherName[i], psaDeath, planted, lifeRate, sep = &quot;:&quot;)
+  motherNameMeanTable &lt;- data.frame(motherName, overallPlanted = overallPlanted[1:motherUniques], overallPsaDeath = overallPsaDeath[1:motherUniques], overallLifeRate = overallLifeRate[1:motherUniques])
+  #outputString[i] &lt;- paste(motherName, psaDeath, planted, lifeRate)
+  #finalString &lt;- paste(finalString, outputString[i])
+  #print(outputString[i])
+}</code></pre>
+<pre><code>## [1] &quot;20&quot;
+## [1] &quot;156&quot;
+## [1] &quot;156&quot; &quot;119&quot;
+## [1] &quot;156&quot; &quot;187&quot;</code></pre>
+<pre class="r"><code>print(planted)</code></pre>
+<pre><code>## [1] 187</code></pre>
+<pre class="r"><code>print(dim(motherNameMeanTable))</code></pre>
+<pre><code>## [1] 2 4</code></pre>
+<pre class="r"><code>print(as.data.frame.matrix(motherNameMeanTable[1:motherUniques, 1:4]))</code></pre>
+<pre><code>##   motherName overallPlanted overallPsaDeath overallLifeRate
+## 1        rJR            156             114           26.92
+## 2        rKG            187             135           27.81</code></pre>
+<pre class="r"><code>clearMeanVariables &lt;- function(){
+  psaDeath &lt;- 0
+overallPsaDeath &lt;- &quot;&quot;
+planted &lt;- 0
+overallPlanted &lt;- &quot;&quot;
+lifeRate &lt;- 0
+overallLifeRate &lt;- &quot;&quot;
+overallUniques &lt;- 0
+plantedPreCalc &lt;- 0
+finalString &lt;- &quot;&quot;
+outputString &lt;- &quot;&quot;
 }</code></pre>
 
 
