@@ -27,7 +27,6 @@ noquote(motherName)
 motherLength <- nchar(motherName)
 noquote(motherLength)
 motherName <- substring(motherName, 2, (motherLength - fatherLength))
-#motherName <- sapply(testerSplit, function(x)x[[1]])
 noquote(motherName)
 motherName <- unique(motherName)
 noquote(motherName)
@@ -177,17 +176,4 @@ for(i in 1:motherUniques){
 print(planted)
 print(dim(motherNameMeanTable))
 print(as.data.frame.matrix(motherNameMeanTable[1:motherUniques, 1:4]))
-
-clearMeanVariables <- function(){
-  psaDeath <- 0
-overallPsaDeath <- ""
-planted <- 0
-overallPlanted <- ""
-lifeRate <- 0
-overallLifeRate <- ""
-overallUniques <- 0
-plantedPreCalc <- 0
-finalString <- ""
-outputString <- ""
-}
 ```

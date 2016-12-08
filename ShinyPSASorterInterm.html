@@ -174,7 +174,6 @@ noquote(motherName)</code></pre>
 noquote(motherLength)</code></pre>
 <pre><code>## [1] 7 7 7 7 7 7 7 7</code></pre>
 <pre class="r"><code>motherName &lt;- substring(motherName, 2, (motherLength - fatherLength))
-#motherName &lt;- sapply(testerSplit, function(x)x[[1]])
 noquote(motherName)</code></pre>
 <pre><code>## [1] rJR rJR rJR rJR rJR rJR rKG rKG</code></pre>
 <pre class="r"><code>motherName &lt;- unique(motherName)
@@ -371,18 +370,6 @@ for(i in 1:motherUniques){
 <pre><code>##   motherName overallPlanted overallPsaDeath overallLifeRate
 ## 1        rJR            156             114           26.92
 ## 2        rKG            187             135           27.81</code></pre>
-<pre class="r"><code>clearMeanVariables &lt;- function(){
-  psaDeath &lt;- 0
-overallPsaDeath &lt;- &quot;&quot;
-planted &lt;- 0
-overallPlanted &lt;- &quot;&quot;
-lifeRate &lt;- 0
-overallLifeRate &lt;- &quot;&quot;
-overallUniques &lt;- 0
-plantedPreCalc &lt;- 0
-finalString &lt;- &quot;&quot;
-outputString &lt;- &quot;&quot;
-}</code></pre>
 
 
 
