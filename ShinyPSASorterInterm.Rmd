@@ -1,41 +1,26 @@
 ---
-title: "ShinyPSASorterInterim"
+title: "ShinyPSASorterInterm ( v0.8 (experimental) )"
 author: "Harrison Crane"
+github: "HRTHXC"
 date: "5 December 2016"
 output: html_document
 ---
 
 ```{r sampleCode}
+library(stringr)
 test <- read.csv(file.choose(), header = TRUE)
 rowCount <- nrow(test)
-print(rowCount)
 uniqueCouple <- levels(test[1, "BrCrCode"])
 uniqueCoupleSize <- length(uniqueCouple)
-print(uniqueCouple)
-print(uniqueCoupleSize)
-#split the string
-testerSplit <- strsplit(levels(test[uniqueCouple, "BrCrCode"]), "[_]")
-noquote(testerSplit)
-#strip all father names (which are numbers)
-fatherName <- sapply(testerSplit, function(x)as.numeric(x[[2]]))
-noquote(fatherName)
-#count that length of numbers, for calculation later on
-fatherLength <- nchar(fatherName[1])
-noquote(fatherLength)
-motherName <- as.character(gsub('[^[:alnum:]]', "",  testerSplit))
-noquote(motherName)
+motherName <- as.character(str_extract(uniqueCouple, "[aA-zZ]+"))
+fatherName <- as.numeric(str_extract(uniqueCouple, "[0-9]+"))
 motherLength <- nchar(motherName)
-noquote(motherLength)
-motherName <- substring(motherName, 2, (motherLength - fatherLength))
-noquote(motherName)
+fatherLength <- nchar(fatherName)
 motherName <- unique(motherName)
-noquote(motherName)
 fatherName <- unique(fatherName)
-noquote(fatherName)
+fatherName <- sort(fatherName, decreasing = FALSE)
 motherUniques <- length(motherName)
-noquote(motherUniques)
 fatherUniques <- length(fatherName)
-noquote(fatherUniques)
 visibleOutputDebug <- 0
 psaDeathDebug <- 0
 plantedDebug <- 0
@@ -46,7 +31,7 @@ for (i in 1:motherUniques){
     psaDeath <- 0
     planted <- 0
     lifeRate <- 0
-    searching <- paste(motherName[i], fatherName[j], sep = "_")
+    searching <- paste(motherName[i], fatherName[j], sep = "")
     #print(searching)
     for (k in 1:rowCount){
       testingValue <- test[k, "BrCrCode"]
@@ -63,7 +48,7 @@ for (i in 1:motherUniques){
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
     #if we couldn't calculate an average before, ignore it
     if(planted == 0){
-      visibleOutputDebug[overallUniques] <-  "NA"
+      visibleOutputDebug[overallUniques] <- "NA"
     }
     #values under 40 are discarded, but still printed out (sample too small)
     else if(planted < 40 & !(planted == 0)){
@@ -81,14 +66,7 @@ print(plantedDebug)
 print(visibleOutputDebug)
 print(motherUniques)
 print(fatherUniques)
-#endTablePrintout <- paste(endTablePrintout, '"')
-#printoutLength <- nchar(endTablePrintout)
-#print(printoutLength)
-#endTablePrintout <- substring(endTablePrintout, 3, printoutLength)
-#noquote(endTablePrintout)
-#test with outputting to .csv
-#write.csv(endTablePrintout, file="output.csv")
-mainTable <- matrix(visibleOutputDebug, nrow=motherLength-1, ncol=fatherLength-1, dimnames = list(fatherName, motherName))
+mainTable <- matrix(visibleOutputDebug, nrow=fatherUniques, ncol=motherUniques, dimnames = list(fatherName, motherName))
 noquote(mainTable)
 psaDeath <- 0
 overallPsaDeath <- ""
