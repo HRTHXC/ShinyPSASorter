@@ -22,12 +22,13 @@ noquote(fatherName)
 #count that length of numbers, for calculation later on
 fatherLength <- nchar(fatherName[1])
 noquote(fatherLength)
-motherName <- sapply(testerSplit, function(x)x[[1]])
+motherName <- as.character(gsub('[^[:alnum:]]', "",  testerSplit))
 noquote(motherName)
 motherLength <- nchar(motherName)
 noquote(motherLength)
-#motherName <- substring(motherName, 2, (motherLength - fatherLength))
-#noquote(motherName)
+motherName <- substring(motherName, 2, (motherLength - fatherLength))
+#motherName <- sapply(testerSplit, function(x)x[[1]])
+noquote(motherName)
 motherName <- unique(motherName)
 noquote(motherName)
 fatherName <- unique(fatherName)
@@ -91,8 +92,11 @@ print(fatherUniques)
 mainTable <- matrix(visibleOutputDebug, nrow=motherLength-1, ncol=fatherLength-1, dimnames = list(fatherName, motherName))
 noquote(mainTable)
 psaDeath <- 0
+overallPsaDeath <- ""
 planted <- 0
+overallPlanted <- ""
 lifeRate <- 0
+overallLifeRate <- ""
 overallUniques <- 0
 plantedPreCalc <- 0
 finalString <- ""
@@ -113,12 +117,16 @@ for(i in 1:fatherUniques){
       next
     }
     planted <- planted + plantedDebug[currentIndex]
+    overallPlanted[i] <- planted
     psaDeath <- psaDeath + psaDeathDebug[currentIndex]
+    overallPsaDeath[i] <- psaDeath
     lifeRate <- (100 - ((psaDeath / planted) * 100))
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
-    fatherNameMeanTable <- data.frame(fatherName, planted, psaDeath, lifeRate)
+    overallLifeRate[i] <- lifeRate
+    print(overallPlanted)
     #lifeRate <- paste(lifeRate, "%")
   }
+  fatherNameMeanTable <- data.frame(fatherName, overallPlanted = overallPlanted[1:fatherUniques], overallPsaDeath = overallPsaDeath[1:fatherUniques], overallLifeRate = overallLifeRate[1:fatherUniques])
   #outputString[i] <- paste(fatherName, psaDeath, planted, lifeRate)
   #finalString <- paste(finalString, outputString[i])
   #print(outputString[i])
