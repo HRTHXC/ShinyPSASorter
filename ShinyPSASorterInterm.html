@@ -122,23 +122,372 @@ $(document).ready(function () {
 </div>
 
 
-<pre><code>##     rJR_      rKG_   
-## 225 40.00 STS 18.84  
-## 227 25.00     18.53  
-## 375 24.37     NaN STS
-## 376 33.82     NaN STS
-## 377 17.52     NaN STS
-## 380 54.95 STS NaN STS</code></pre>
-<pre><code>##   fatherName overallPlanted overallPsaDeath overallLifeRate
-## 1        225            312             249           20.19
-## 2        227            449             357           20.49
-## 3        375            119              90           24.37
-## 4        376             68              45           33.82
-## 5        377            137             113           17.52
-## 6        380             91              41           54.95</code></pre>
-<pre><code>##   motherName overallPlanted overallPsaDeath overallLifeRate
-## 1       rJR_            571             403           29.42
-## 2       rKG_            605             492           18.68</code></pre>
+<pre><code>##      &lt;NA&gt;    aCK_      cAD_      cW_       cXB_      cXG_      cXH_     
+## 1    NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 2    NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 8    NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 111  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 219  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 227  NaN STS 70.59 STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 232  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 235  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 248  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 273  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 287  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 298  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 304  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 321  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 376  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 381  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 393  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 406  NaN STS 95.00 STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 457  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 476  NaN STS NaN STS   93.75 STS 80.00 STS NaN STS   NaN STS   NaN STS  
+## 605  NaN STS 85.71 STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 606  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 607  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 701  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 702  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 704  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   100.00    80.77 STS
+## 708  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 709  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 710  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 714  NaN STS NaN STS   100.00    NaN STS   NaN STS   NaN STS   NaN STS  
+## 715  NaN STS NaN STS   NaN STS   NaN STS   93.02 STS NaN STS   NaN STS  
+## 716  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 720  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 732  NaN STS NaN STS   NaN STS   92.50 STS NaN STS   NaN STS   NaN STS  
+## 737  NaN STS NaN STS   NaN STS   91.67 STS NaN STS   NaN STS   NaN STS  
+## 744  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 745  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 750  NaN STS NaN STS   NaN STS   NaN STS   80.65 STS NaN STS   NaN STS  
+## 751  NaN STS NaN STS   NaN STS   NaN STS   75.76 STS NaN STS   NaN STS  
+## 752  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   90.62 STS 87.50 STS
+## 753  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   84.38 STS NaN STS  
+## 755  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   96.67 STS
+## 757  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 758  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 873  NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 1001 NaN STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+##      cXI_      cXJ_      cXK_      cXL_      cXM_      cXN_      cYF_     
+## 1    NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 2    NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 8    NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 111  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 219  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 227  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 232  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 235  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 248  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   80.65 STS
+## 273  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 287  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 298  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 304  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 321  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 376  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   81.82 STS
+## 381  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 393  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 406  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 457  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 476  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 605  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 606  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 607  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 701  NaN STS   100.00    NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 702  NaN STS   85.71 STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 704  100.00    83.33 STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 708  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 709  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 710  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 714  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 715  NaN STS   NaN STS   90.48 STS 92.31 STS 91.78 STS 95.45 STS NaN STS  
+## 716  NaN STS   NaN STS   73.91 STS 82.54 STS NaN STS   89.36 STS NaN STS  
+## 720  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 732  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 737  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 744  NaN STS   NaN STS   77.78 STS 75.00 STS NaN STS   94.12 STS NaN STS  
+## 745  NaN STS   NaN STS   91.67 STS 80.00 STS 90.00 STS 90.91 STS NaN STS  
+## 750  NaN STS   NaN STS   81.82 STS 84.00 STS 90.62 STS 96.15 STS NaN STS  
+## 751  NaN STS   NaN STS   82.35 STS 80.95 STS 84.62 STS 80.65 STS NaN STS  
+## 752  NaN STS   87.10 STS 88.24 STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 753  93.94 STS 84.00 STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 755  96.88 STS 87.50 STS NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 757  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 758  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+## 873  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   93.10 STS
+## 1001 NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS  
+##      cYG_      cYZ_      cZ_       eJ_       eM_       GL_     GT_      
+## 1    NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 2    NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 8    NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 111  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 219  76.47 STS NaN STS   NaN STS   65.62 STS NaN STS   NaN STS NaN STS  
+## 227  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS 81.25 STS
+## 232  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 235  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 248  94.12 STS NaN STS   NaN STS   84.38 STS NaN STS   NaN STS NaN STS  
+## 273  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 287  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 298  70.97 STS NaN STS   NaN STS   67.86 STS 92.86 STS NaN STS NaN STS  
+## 304  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 321  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 376  NaN STS   NaN STS   NaN STS   70.83 STS 93.55 STS NaN STS NaN STS  
+## 381  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS 80.00 STS
+## 393  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 406  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS 100.00   
+## 457  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS 92.86 STS
+## 476  NaN STS   93.75 STS 100.00    NaN STS   NaN STS   NaN STS NaN STS  
+## 605  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS 94.12 STS
+## 606  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS 100.00   
+## 607  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 701  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 702  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 704  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 708  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 709  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 710  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 714  NaN STS   90.00 STS NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 715  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 716  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 720  NaN STS   87.50 STS 87.50 STS NaN STS   NaN STS   NaN STS NaN STS  
+## 732  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 737  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 744  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 745  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 750  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 751  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 752  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 753  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 755  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 757  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 758  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 873  NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+## 1001 NaN STS   NaN STS   NaN STS   NaN STS   NaN STS   NaN STS NaN STS  
+##      kAB_      kAG_      rG      rGO_      rJV_      rJW_      rJZ_     
+## 1    NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 2    NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 8    NaN STS   NaN STS   100.00  NaN STS   NaN STS   NaN STS   NaN STS  
+## 111  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 219  90.62 STS NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 227  NaN STS   NaN STS   NaN STS 78.95 STS NaN STS   NaN STS   92.31 STS
+## 232  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 235  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 248  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 273  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 287  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 298  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 304  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 321  NaN STS   NaN STS   NaN STS 87.76 STS NaN STS   NaN STS   NaN STS  
+## 376  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 381  NaN STS   NaN STS   NaN STS 52.17 STS NaN STS   NaN STS   57.14 STS
+## 393  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 406  NaN STS   NaN STS   NaN STS 93.33 STS NaN STS   NaN STS   NaN STS  
+## 457  NaN STS   NaN STS   NaN STS 74.07 STS NaN STS   NaN STS   90.00 STS
+## 476  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 605  NaN STS   NaN STS   NaN STS 94.44 STS NaN STS   NaN STS   95.00 STS
+## 606  NaN STS   NaN STS   NaN STS 100.00    NaN STS   NaN STS   NaN STS  
+## 607  NaN STS   NaN STS   NaN STS 87.63 STS NaN STS   NaN STS   NaN STS  
+## 701  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 702  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 704  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 708  89.29 STS NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 709  NaN STS   NaN STS   NaN STS NaN STS   93.75 STS NaN STS   NaN STS  
+## 710  NaN STS   67.74 STS NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 714  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 715  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 716  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 720  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 732  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 737  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 744  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 745  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 750  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 751  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 752  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 753  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 755  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 757  NaN STS   NaN STS   NaN STS NaN STS   74.19 STS NaN STS   NaN STS  
+## 758  NaN STS   NaN STS   NaN STS NaN STS   NaN STS   56.25 STS NaN STS  
+## 873  96.88 STS NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+## 1001 NaN STS   NaN STS   NaN STS NaN STS   NaN STS   NaN STS   NaN STS  
+##      rLZ_      RM_     rMY_      rOG_    rPJ_    rPK_      T      
+## 1    NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 2    NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 8    NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 111  NaN STS   100.00  NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 219  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 227  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 232  NaN STS   NaN STS NaN STS   NaN STS 100.00  NaN STS   NaN STS
+## 235  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 248  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 273  NaN STS   NaN STS NaN STS   NaN STS NaN STS 82.83 STS NaN STS
+## 287  NaN STS   NaN STS NaN STS   100.00  NaN STS NaN STS   NaN STS
+## 298  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 304  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 321  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 376  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 381  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 393  NaN STS   NaN STS NaN STS   NaN STS NaN STS 71.51 STS NaN STS
+## 406  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 457  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 476  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 605  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 606  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 607  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 701  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 702  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 704  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 708  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 709  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 710  74.19 STS NaN STS 48.57 STS NaN STS NaN STS NaN STS   NaN STS
+## 714  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 715  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 716  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 720  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 732  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 737  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 744  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 745  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 750  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 751  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 752  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 753  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 755  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 757  NaN STS   NaN STS 62.50 STS NaN STS NaN STS NaN STS   NaN STS
+## 758  NaN STS   NaN STS 40.74 STS NaN STS NaN STS NaN STS   NaN STS
+## 873  NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+## 1001 NaN STS   NaN STS NaN STS   NaN STS NaN STS NaN STS   NaN STS
+##      ZI_      
+## 1    NaN STS  
+## 2    NaN STS  
+## 8    NaN STS  
+## 111  NaN STS  
+## 219  NaN STS  
+## 227  NaN STS  
+## 232  NaN STS  
+## 235  NaN STS  
+## 248  NaN STS  
+## 273  NaN STS  
+## 287  NaN STS  
+## 298  NaN STS  
+## 304  NaN STS  
+## 321  NaN STS  
+## 376  NaN STS  
+## 381  NaN STS  
+## 393  NaN STS  
+## 406  NaN STS  
+## 457  NaN STS  
+## 476  NaN STS  
+## 605  NaN STS  
+## 606  NaN STS  
+## 607  NaN STS  
+## 701  NaN STS  
+## 702  NaN STS  
+## 704  NaN STS  
+## 708  NaN STS  
+## 709  NaN STS  
+## 710  NaN STS  
+## 714  NaN STS  
+## 715  NaN STS  
+## 716  NaN STS  
+## 720  NaN STS  
+## 732  NaN STS  
+## 737  NaN STS  
+## 744  NaN STS  
+## 745  NaN STS  
+## 750  NaN STS  
+## 751  NaN STS  
+## 752  NaN STS  
+## 753  NaN STS  
+## 755  NaN STS  
+## 757  NaN STS  
+## 758  NaN STS  
+## 873  NaN STS  
+## 1001 96.65 STS</code></pre>
+<pre><code>##    fatherName overallPlanted overallPsaDeath overallLifeRate
+## 1           1              0               0             NaN
+## 2           2           &lt;NA&gt;            &lt;NA&gt;            &lt;NA&gt;
+## 3           8              3               0          100.00
+## 4         111              1               0          100.00
+## 5         219             98              22           77.55
+## 6         227             65              13           80.00
+## 7         232              1               0          100.00
+## 8         235           &lt;NA&gt;            &lt;NA&gt;            &lt;NA&gt;
+## 9         248             97              13           86.60
+## 10        273             99              17           82.83
+## 11        287              1               0          100.00
+## 12        298             73              19           73.97
+## 13        304           &lt;NA&gt;            &lt;NA&gt;            &lt;NA&gt;
+## 14        321             49               6           87.76
+## 15        376             88              15           82.95
+## 16        381             57              21           63.16
+## 17        393            179              51           71.51
+## 18        406            100               5           95.00
+## 19        457             51               9           82.35
+## 20        476            144              12           91.67
+## 21        605             83               7           91.57
+## 22        606             30               0          100.00
+## 23        607             97              12           87.63
+## 24        701             22               0          100.00
+## 25        702              7               1           85.71
+## 26        704             59               6           89.83
+## 27        708             28               3           89.29
+## 28        709             32               2           93.75
+## 29        710             97              36           62.89
+## 30        714             72               4           94.44
+## 31        715            198              15           92.42
+## 32        716            133              22           83.46
+## 33        720             56               7           87.50
+## 34        732             40               3           92.50
+## 35        737             48               4           91.67
+## 36        744             63              12           80.95
+## 37        745             87              10           88.51
+## 38        750            125              16           87.20
+## 39        751            115              23           80.00
+## 40        752             96              11           88.54
+## 41        753             90              11           87.78
+## 42        755             94               6           93.62
+## 43        757             63              20           68.25
+## 44        758             59              30           49.15
+## 45        873             61               3           95.08
+## 46       1001            209               7           96.65</code></pre>
+<pre><code>##    motherName overallPlanted overallPsaDeath overallLifeRate
+## 1        &lt;NA&gt;              0               0             NaN
+## 2        aCK_             65              10           84.62
+## 3        cAD_             64               2           96.88
+## 4         cW_            128              15           88.28
+## 5        cXB_            107              17           84.11
+## 6        cXG_             83               8           90.36
+## 7        cXH_             72               8           88.89
+## 8        cXI_             73               3           95.89
+## 9        cXJ_            123              14           88.62
+## 10       cXK_            131              21           83.97
+## 11       cXL_            196              33           83.16
+## 12       cXM_            128              12           90.62
+## 13       cXN_            176              17           90.34
+## 14       cYF_             93              14           84.95
+## 15       cYG_             99              19           80.81
+## 16       cYZ_             96               9           90.62
+## 17        cZ_             72               4           94.44
+## 18        eJ_            116              32           72.41
+## 19        eM_             45               3           93.33
+## 20        GL_           &lt;NA&gt;            &lt;NA&gt;            &lt;NA&gt;
+## 21        GT_             99               9           90.91
+## 22       kAB_             92               7           92.39
+## 23       kAG_             31              10           67.74
+## 24         rG              3               0          100.00
+## 25       rGO_            311              45           85.53
+## 26       rJV_             63              10           84.13
+## 27       rJW_             32              14           56.25
+## 28       rJZ_             57               9           84.21
+## 29       rLZ_             31               8           74.19
+## 30        RM_              1               0          100.00
+## 31       rMY_             94              46           51.06
+## 32       rOG_              1               0          100.00
+## 33       rPJ_              1               0          100.00
+## 34       rPK_            278              68           75.54
+## 35          T           &lt;NA&gt;            &lt;NA&gt;            &lt;NA&gt;
+## 36        ZI_            209               7           96.65</code></pre>
 
 
 

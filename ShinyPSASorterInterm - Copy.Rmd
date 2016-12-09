@@ -77,9 +77,9 @@ for(i in 1:fatherUniques){
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
     overallLifeRate[i] <- lifeRate
   }
+  fatherNameMeanTable <- data.frame(fatherName, overallPlanted = overallPlanted[1:fatherUniques], overallPsaDeath = overallPsaDeath[1:fatherUniques], overallLifeRate = overallLifeRate[1:fatherUniques])
 }
 #required printing for table
-fatherNameMeanTable <- data.frame(fatherName, overallPlanted = overallPlanted[1:fatherUniques], overallPsaDeath = overallPsaDeath[1:fatherUniques], overallLifeRate = overallLifeRate[1:fatherUniques])
 print(as.data.frame.matrix(fatherNameMeanTable[1:fatherUniques, 1:4]))
 overallPsaDeath <- ""
 overallPlanted <- ""
@@ -109,8 +109,8 @@ for(i in 1:motherUniques){
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
     overallLifeRate[i] <- lifeRate
   }
+  motherNameMeanTable <- data.frame(motherName, overallPlanted = overallPlanted[1:motherUniques], overallPsaDeath = overallPsaDeath[1:motherUniques], overallLifeRate = overallLifeRate[1:motherUniques])
 }
 #required printing for table
-motherNameMeanTable <- data.frame(motherName, overallPlanted = overallPlanted[1:motherUniques], overallPsaDeath = overallPsaDeath[1:motherUniques], overallLifeRate = overallLifeRate[1:motherUniques])
 print(as.data.frame.matrix(motherNameMeanTable[1:motherUniques, 1:4]))
 ```
