@@ -44,18 +44,7 @@ for (i in 1:motherUniques){
     #create a vector for me!
     lifeRate <- (100 - ((psaDeath / planted) * 100))
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
-    #if we couldn't calculate an average before, ignore it
-    if(planted == 0){
-      visibleOutputDebug[overallUniques] <- "NA"
-    }
-    #values under 40 are discarded, but still printed out (sample too small)
-    else if(planted < 40 & !(planted == 0)){
-      visibleOutputDebug[overallUniques] <- paste(lifeRate, "STS")
-    }
-    #otherwise, lets print it out, we can use the values later for calculating means
-    else{
-      visibleOutputDebug[overallUniques] <- lifeRate
-    }
+    visibleOutputDebug[overallUniques] <- ifelse(lifeRate==0, "NA", ifelse(lifeRate>40 , paste(lifeRate, "STS"), lifeRate))
     overallUniques <- overallUniques + 1
   }
 }
