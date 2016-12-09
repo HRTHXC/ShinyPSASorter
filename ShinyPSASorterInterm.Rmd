@@ -1,12 +1,12 @@
 ---
-title: "ShinyPSASorterInterm ( v0.8 (experimental) )"
+title: "ShinyPSASorterInterm ( v0.9 (experimental) )"
 author: "Harrison Crane"
 github: "HRTHXC"
 date: "5 December 2016"
 output: html_document
 ---
 
-```{r sampleCode}
+```{r sampleCode, echo=FALSE, cache=FALSE}
 library(stringr)
 test <- read.csv(file.choose(), header = TRUE)
 rowCount <- nrow(test)
@@ -50,16 +50,11 @@ for (i in 1:motherUniques){
 }
 mainTable <- matrix(visibleOutputDebug, nrow=fatherUniques, ncol=motherUniques, dimnames = list(fatherName, motherName))
 noquote(mainTable)
-psaDeath <- 0
 overallPsaDeath <- ""
-planted <- 0
 overallPlanted <- ""
-lifeRate <- 0
 overallLifeRate <- ""
 overallUniques <- 0
-plantedPreCalc <- 0
 finalString <- ""
-outputString <- ""
 meanColumnNames <- paste("FatherName", "PSADeath", "Planted", "AverageAlive")
 #calculate mean for those father parings
 for(i in 1:fatherUniques){
@@ -86,19 +81,13 @@ for(i in 1:fatherUniques){
 }
 #required printing for table
 print(as.data.frame.matrix(fatherNameMeanTable[1:fatherUniques, 1:4]))
-psaDeath <- 0
 overallPsaDeath <- ""
-planted <- 0
 overallPlanted <- ""
-lifeRate <- 0
 overallLifeRate <- ""
 overallUniques <- 0
-plantedPreCalc <- 0
 finalString <- ""
-outputString <- ""
 meanColumnNames <- paste("MotherName", "PSADeath", "Planted", "AverageAlive")
 #calculate mean for those mother parings
-print(plantedDebug)
 for(i in 1:motherUniques){
   psaDeath <- 0
   planted <- 0
@@ -112,16 +101,13 @@ for(i in 1:motherUniques){
     if(is.na(plantedDebug[currentIndex])){
       next
     }
-    print(currentIndex)
     planted <- planted + plantedDebug[currentIndex]
     overallPlanted[i] <- planted
-    print(plantedDebug[currentIndex])
     psaDeath <- psaDeath + psaDeathDebug[currentIndex]
     overallPsaDeath[i] <- psaDeath
     lifeRate <- (100 - ((psaDeath / planted) * 100))
     lifeRate <- format(round(lifeRate, 2), nsmall = 2)
     overallLifeRate[i] <- lifeRate
-    print(overallPlanted)
   }
   motherNameMeanTable <- data.frame(motherName, overallPlanted = overallPlanted[1:motherUniques], overallPsaDeath = overallPsaDeath[1:motherUniques], overallLifeRate = overallLifeRate[1:motherUniques])
 }
