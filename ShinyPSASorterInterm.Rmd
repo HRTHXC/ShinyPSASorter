@@ -109,20 +109,24 @@ finalString <- ""
 outputString <- ""
 meanColumnNames <- paste("MotherName", "PSADeath", "Planted", "AverageAlive")
 #calculate mean for those mother parings
+print(plantedDebug)
 for(i in 1:motherUniques){
   psaDeath <- 0
   planted <- 0
   lifeRate <- 0
   currentIndex <- 0
   plantedPreCalc <- 0
+  #motherMean values are grossly incorrect
   outputString <- ""
   for(j in 1:fatherUniques){
-    currentIndex <- (((i-1)*motherUniques)+j)
+    currentIndex <- (((i-1)*fatherUniques)+j)
     if(is.na(plantedDebug[currentIndex])){
       next
     }
+    print(currentIndex)
     planted <- planted + plantedDebug[currentIndex]
     overallPlanted[i] <- planted
+    print(plantedDebug[currentIndex])
     psaDeath <- psaDeath + psaDeathDebug[currentIndex]
     overallPsaDeath[i] <- psaDeath
     lifeRate <- (100 - ((psaDeath / planted) * 100))
