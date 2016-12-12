@@ -1,5 +1,5 @@
 ---
-title: "ShinyPSASorterwFREAD ( test )"
+title: "ShinyPSASorterwFREAD ( v0.8 beta )"
 author: "Harrison Crane"
 github: "HRTHXC"
 date: "12 December 2016"
@@ -13,9 +13,12 @@ library(plyr)
 test <- fread(file.choose(), header = TRUE, data.table = TRUE)
 testRowLength <- nrow(test)
 rowBrCrCode <- ""
+rowMother <- ""
+rowFather <- ""
 rowPlanted <- 0
 rowPsaDeath <- 0
 rowSurvival <- 0
+splitCode <- ""
 for(i in 1:testRowLength){
   if(test$BrCrCode[i] == ""){
     test$BrCrCode[i] <- paste("PH_", i, sep = "")
@@ -33,16 +36,30 @@ for(i in 1:testRowLength){
   underscoreCount <- str_count(test$BrCrCode[i], '_')
   if(underscoreCount == 0){
     print(paste("hit found, turn ", test$BrCrCode[i]," into ", as.character(str_extract(test$BrCrCode[i], "[aA-zZ]+")), "_",  as.numeric(str_extract(test$BrCrCode[i], "[0-9]+")), sep = "" ))
-    #numLengthInXCode <- sapply(regmatches(test$BrCrCode[i], gregexpr("[:digit:]", test$BrCrCode[i])), length)
+    test$BrCrCode[i] <- paste(as.character(str_extract(test$BrCrCode[i], "[aA-zZ]+")), "_",  as.numeric(str_extract(test$BrCrCode[i], "[0-9]+")), sep = "")
   }
   rowBrCrCode[i] <- test$BrCrCode[i]
+  splitCode <- strsplit(rowBrCrCode[i], "_")
+  rowMother[i] <- sapply(splitCode, "[", 1)
+  rowFather[i] <- sapply(splitCode, "[", 2)
   rowPlanted[i] <- as.numeric(test$Planted[i])
   rowPsaDeath[i] <- as.numeric(test$PsaDeath[i])
 }
+print(rowMother)
+print(rowFather)
 firstDT <- data.table(rowBrCrCode, rowPlanted, rowPsaDeath, rowSurvival)
-firstDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ BrCrCode,
-                   data = test, FUN = sum)
+motherDT <- data.table(rowMother, rowPlanted, rowPsaDeath, rowSurvival)
+fatherDT <- data.table(rowFather, rowPlanted, rowPsaDeath, rowSurvival)
+firstDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ BrCrCode, data = test, FUN = sum)
+motherDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ rowMother, data = test, FUN = sum)
+fatherDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ rowFather, data = test, FUN = sum)
 firstDT$rowSurvival <- 100 - ((firstDT$rowPsaDeath / firstDT$rowPlanted) * 100)
+motherDT$rowSurvival <- 100 - ((motherDT$rowPsaDeath / motherDT$rowPlanted) * 100)
+fatherDT$rowSurvival <- 100 - ((fatherDT$rowPsaDeath / fatherDT$rowPlanted) * 100)
 firstDT$rowSurvival <- format(round(firstDT$rowSurvival, 2), nsmall = 2)
+motherDT$rowSurvival <- format(round(motherDT$rowSurvival, 2), nsmall = 2)
+fatherDT$rowSurvival <- format(round(fatherDT$rowSurvival, 2), nsmall = 2)
 print(firstDT)
+print(motherDT)
+print(fatherDT)
 ```
