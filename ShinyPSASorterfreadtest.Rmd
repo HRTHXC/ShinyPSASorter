@@ -9,6 +9,7 @@ output: html_document
 ```{r sampleCode, echo=FALSE, cache=FALSE}
 library(stringr)
 library(data.table)
+library(plyr)
 test <- fread(file.choose(), header = TRUE, data.table = TRUE)
 testRowLength <- nrow(test)
 rowBrCrCode <- ""
@@ -22,19 +23,20 @@ for(i in 1:testRowLength){
   }
   slashCount <- str_count(test$BrCrCode[i], '/')
   if(slashCount == 1){
-    test$BrCrCode[i] <- unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1]
     print(paste("hit found, turn ", test$BrCrCode[i], " into ", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = ""))
+    test$BrCrCode[i] <- unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1]
   }
   else if(slashCount > 1){
+    print(paste("control found, value ", test$BrCrCode[i], " into ", paste("control_", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = ""), sep = ""))
     test$BrCrCode[i] <- paste("control_", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = "")
-    print(paste("control found, value ", test$BrCrCode[i], " into ", paste("control", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1:4], sep = " "), sep = ""))
   }
   rowBrCrCode[i] <- test$BrCrCode[i]
   rowPlanted[i] <- test$Planted[i]
   rowPsaDeath[i] <- test$PsaDeath[i]
-  rowSurvival[i] <- 100 - (as.numeric(rowPsaDeath[i]) / as.numeric(rowPlanted[i]) * 100)
+  #rowSurvival[i] <- 100 - (as.numeric(rowPsaDeath[i]) / as.numeric(rowPlanted[i]) * 100)
 }
 firstDT <- data.table(rowBrCrCode, rowPlanted, rowPsaDeath, rowSurvival)
-print(firstDT, nrows = 100)
-print(test)
+print(firstDT)
+firstDT_agg <- aggregate(. ~ rowBrCrCode, firstDT, FUM = sum(na.rm = TRUE))
+#ddply(firstDT, "rowBrCrCode", numrowwise(sum))
 ```
