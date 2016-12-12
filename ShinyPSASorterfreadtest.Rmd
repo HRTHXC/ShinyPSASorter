@@ -32,8 +32,7 @@ for(i in 1:testRowLength){
   rowBrCrCode[i] <- test$BrCrCode[i]
   rowPlanted[i] <- test$Planted[i]
   rowPsaDeath[i] <- test$PsaDeath[i]
-  rowSurvival[i] <- test$Percent_Remaining[i]
-  print(rowSurvival[i])
+  rowSurvival[i] <- 100 - (as.numeric(rowPsaDeath[i]) / as.numeric(rowPlanted[i]) * 100)
 }
 firstDT <- data.table(rowBrCrCode, rowPlanted, rowPsaDeath, rowSurvival)
 print(firstDT, nrows = 100)
