@@ -10,6 +10,7 @@ output: html_document
 library(stringr)
 test <- read.csv(file.choose(), header = TRUE)
 rowCount <- nrow(test)
+print(test)
 uniqueCouple <- levels(test[1, "BrCrCode"])
 uniqueCoupleSize <- length(uniqueCouple)
 motherName <- as.character(str_extract(uniqueCouple, "[aA-zZ]+"))

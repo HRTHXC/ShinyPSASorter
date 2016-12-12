@@ -1,0 +1,41 @@
+---
+title: "ShinyPSASorterwFREAD ( test )"
+author: "Harrison Crane"
+github: "HRTHXC"
+date: "12 December 2016"
+output: html_document
+---
+
+```{r sampleCode, echo=FALSE, cache=FALSE}
+library(stringr)
+library(data.table)
+test <- fread(file.choose(), header = TRUE, data.table = TRUE)
+testRowLength <- nrow(test)
+rowBrCrCode <- ""
+rowPlanted <- 0
+rowPsaDeath <- 0
+rowSurvival <- 0
+for(i in 1:testRowLength){
+  if(test$BrCrCode[i] == ""){
+    test$BrCrCode[i] <- paste("PH_", i, sep = "")
+    print(paste("hit found, turned nothing into ", test$BrCrCode[i], sep = ""))
+  }
+  slashCount <- str_count(test$BrCrCode[i], '/')
+  if(slashCount == 1){
+    test$BrCrCode[i] <- unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1]
+    print(paste("hit found, turn ", test$BrCrCode[i], " into ", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = ""))
+  }
+  else if(slashCount > 1){
+    test$BrCrCode[i] <- paste("control_", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = "")
+    print(paste("control found, value ", test$BrCrCode[i], " into ", paste("control", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1:4], sep = " "), sep = ""))
+  }
+  rowBrCrCode[i] <- test$BrCrCode[i]
+  rowPlanted[i] <- test$Planted[i]
+  rowPsaDeath[i] <- test$PsaDeath[i]
+  rowSurvival[i] <- test$Percent_Remaining[i]
+  print(rowSurvival[i])
+}
+firstDT <- data.table(rowBrCrCode, rowPlanted, rowPsaDeath, rowSurvival)
+print(firstDT, nrows = 100)
+print(test)
+```
