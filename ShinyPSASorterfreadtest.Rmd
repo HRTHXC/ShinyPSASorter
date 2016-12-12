@@ -32,8 +32,8 @@ for(i in 1:testRowLength){
   }
   underscoreCount <- str_count(test$BrCrCode[i], '_')
   if(underscoreCount == 0){
-    print(paste("hit found, turn", test$BrCrCode[i], "into", "meme"))
-    #numLengthInXCode <- sapply(regmatches(test$BrCrCode[i], gregexpr([:digit:], test$BrCrCode[i])), length)
+    print(paste("hit found, turn ", test$BrCrCode[i]," into ", as.character(str_extract(test$BrCrCode[i], "[aA-zZ]+")), "_",  as.numeric(str_extract(test$BrCrCode[i], "[0-9]+")), sep = "" ))
+    #numLengthInXCode <- sapply(regmatches(test$BrCrCode[i], gregexpr("[:digit:]", test$BrCrCode[i])), length)
   }
   rowBrCrCode[i] <- test$BrCrCode[i]
   rowPlanted[i] <- as.numeric(test$Planted[i])
