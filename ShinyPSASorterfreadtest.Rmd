@@ -38,5 +38,6 @@ for(i in 1:testRowLength){
 firstDT <- data.table(rowBrCrCode, rowPlanted, rowPsaDeath, rowSurvival)
 print(firstDT)
 firstDT_agg <- aggregate(. ~ rowBrCrCode, firstDT, FUM = sum(na.rm = TRUE))
-#ddply(firstDT, "rowBrCrCode", numrowwise(sum))
+#dt[, lapply(.SD, sum), by = rowBrCrCode]
+#test2 <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ BrCrCode, data = test, FUN = sum) 
 ```
