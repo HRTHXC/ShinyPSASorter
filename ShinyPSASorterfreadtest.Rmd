@@ -1,5 +1,5 @@
 ---
-title: "ShinyPSASorterwFREAD ( v0.9 beta )"
+title: "ShinyPSASorterwFREAD ( v1.0 )"
 author: "Harrison Crane"
 github: "HRTHXC"
 date: "12 December 2016"
