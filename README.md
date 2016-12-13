@@ -53,4 +53,6 @@ It's preferred you use FRead .Rmd, as it's the most stable and more reliable to 
 
 By default, if the script detects that a BrCrCode contains nothing, it will change it to PH (placeholder) _ (number row it is in). For example, a blank brcrcode at row 76 will give the dummy output of PH_76. A suggestion, where possible is to use the CrossName in Column A of the CSV file. Copy those values where Column B is currently blank into Column B, and then run the script.
 
-2: (where I or you can think or more things, i'll add them here)
+2: Generated files are sent to the home directory
+
+For windows, this is My Documents, generatedOutput, For Mac OSX or Linux this is your home or user folder, generatedOutput, files are told apart by name and date created

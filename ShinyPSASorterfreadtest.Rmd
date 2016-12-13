@@ -13,8 +13,13 @@ system.time({
   library(stringr)
   library(data.table)
   library(plyr)
+  library(tools)
+  filename <- file.choose()
   #Using fread, let's read in the whole csv file for use in program
-  test <- fread(file.choose(), header = TRUE, data.table = TRUE)
+  test <- fread(filename, header = TRUE, data.table = TRUE)
+  filename <- file_path_sans_ext(filename)
+  filename <- unlist(strsplit(filename, split = '\\', fixed=TRUE))[5]
+  print(filename)
   #how many rows are there?
   testRowLength <- nrow(test)
   #variables we will use to grab the data we want from the csv file
@@ -77,14 +82,20 @@ system.time({
   motherDT$rowSurvival <- format(round(motherDT$rowSurvival, 2), nsmall = 2)
   fatherDT$rowSurvival <- format(round(fatherDT$rowSurvival, 2), nsmall = 2)
   #print out that the sample is too small for certain mother/father/cross combinations with a tag (STS, sample too small < 40)
-  firstDT$rowBrCrCode <- ifelse(firstDT$rowPlanted<40, paste(firstDT$rowBrCrCode, "STS", sep = " "), firstDT$rowBrCrCode)
+  firstDT$BrCrCode <- ifelse(firstDT$rowPlanted<40, paste("(STS)", firstDT$BrCrCode), firstDT$BrCrCode)
+  motherDT$rowMother <- ifelse(motherDT$rowPlanted<40, paste("(STS)", motherDT$rowMother), motherDT$rowMother)
+  fatherDT$rowFather <- ifelse(fatherDT$rowPlanted<40, paste("(STS)", fatherDT$rowFather), fatherDT$rowFather)
   #print out all those tables for the user
   print(firstDT)
   print(motherDT)
   print(fatherDT)
+  #grab the current time of execution, remove pucntuation
+  executionTime <- gsub("[^[:digit:],]", "", Sys.time())
+  #create that new directory for storing those new csv files output by the program
+  directory <- dir.create(paste("~/generatedOutput/", executionTime, filename, "/", sep = ""))
   #write out .csv copies of all that data we created, and save to a suitable place,lets add timestamp and input file name also
-  write.csv(firstDT, file = "Parents.csv")
-  write.csv(motherDT, file = "Mothers.csv")
-  write.csv(fatherDT, file = "Fathers.csv")
+  write.csv(firstDT, file = paste(directory, "Parents.csv", sep = ""))
+  write.csv(motherDT, file = paste(directory, "Mothers.csv", sep = ""))
+  write.csv(fatherDT, file = paste(directory, "Fathers.csv", sep = ""))
 })
 ```
