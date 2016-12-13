@@ -1,5 +1,5 @@
 ---
-title: "ShinyPSASorterwFREAD ( v0.8 beta )"
+title: "ShinyPSASorterwFREAD ( v0.9 beta )"
 author: "Harrison Crane"
 github: "HRTHXC"
 date: "12 December 2016"
@@ -7,59 +7,82 @@ output: html_document
 ---
 
 ```{r sampleCode, echo=FALSE, cache=FALSE}
-library(stringr)
-library(data.table)
-library(plyr)
-test <- fread(file.choose(), header = TRUE, data.table = TRUE)
-testRowLength <- nrow(test)
-rowBrCrCode <- ""
-rowMother <- ""
-rowFather <- ""
-rowPlanted <- 0
-rowPsaDeath <- 0
-rowSurvival <- 0
-splitCode <- ""
-for(i in 1:testRowLength){
-  if(test$BrCrCode[i] == ""){
-    test$BrCrCode[i] <- paste("PH_", i, sep = "")
-    print(paste("hit found, turned nothing into ", test$BrCrCode[i], sep = ""))
+#I just wanna known the execution time
+system.time({
+  #Import relevant libraries to calculations
+  library(stringr)
+  library(data.table)
+  library(plyr)
+  #Using fread, let's read in the whole csv file for use in program
+  test <- fread(file.choose(), header = TRUE, data.table = TRUE)
+  #how many rows are there?
+  testRowLength <- nrow(test)
+  #variables we will use to grab the data we want from the csv file
+  rowBrCrCode <- ""
+  rowMother <- ""
+  rowFather <- ""
+  rowPlanted <- 0
+  rowPsaDeath <- 0
+  rowSurvival <- 0
+  splitCode <- ""
+  #repeat for how many rows we have
+  for(i in 1:testRowLength){
+    #if there is nothing in the cell
+    if(test$BrCrCode[i] == ""){
+      #let's make a placeholder name for the plant, could use the CrossName?
+      test$BrCrCode[i] <- paste("PH_", i, sep = "")
+    }
+    #count how many forward slash there are in the name, this is important
+    slashCount <- str_count(test$BrCrCode[i], '/')
+    #if there is one slash (usually for input like rGR_287/1, we will append these splits together)
+    if(slashCount == 1){
+      #yeah, like I said above
+      test$BrCrCode[i] <- unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1]
+    }
+    #if it's more than one, it's probably a Gold or Red control plant '(T01/RL/b13/F04)'
+    else if(slashCount > 1){
+      #let's replace that with a more sensible control_first part of the control name
+      test$BrCrCode[i] <- paste("control_", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = "")
+    }
+    #now let's count for underscores in the breeding cross code
+    underscoreCount <- str_count(test$BrCrCode[i], '_')
+    #if the breeding cross code contained no underscore
+    if(underscoreCount == 0){
+      #let's manually add one, to make things easier for processing
+      test$BrCrCode[i] <- paste(as.character(str_extract(test$BrCrCode[i], "[aA-zZ]+")), "_",  as.numeric(str_extract(test$BrCrCode[i], "[0-9]+")), sep = "")
+    }
+    #we can now use the cross code from later in those data tables
+    rowBrCrCode[i] <- test$BrCrCode[i]
+    #since all codes have been held in with a single underscore, let's break it apart...
+    splitCode <- strsplit(rowBrCrCode[i], "_")
+    #... and place them into the correct mother or father slots, mother is slot 1, father is slot 2
+    rowMother[i] <- sapply(splitCode, "[", 1)
+    rowFather[i] <- sapply(splitCode, "[", 2)
+    #values of planted plants and plants dead from psa now
+    rowPlanted[i] <- as.numeric(test$Planted[i])
+    rowPsaDeath[i] <- as.numeric(test$PsaDeath[i])
   }
-  slashCount <- str_count(test$BrCrCode[i], '/')
-  if(slashCount == 1){
-    print(paste("hit found, turn ", test$BrCrCode[i], " into ", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = ""))
-    test$BrCrCode[i] <- unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1]
-  }
-  else if(slashCount > 1){
-    print(paste("control found, value ", test$BrCrCode[i], " into ", paste("control_", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = ""), sep = ""))
-    test$BrCrCode[i] <- paste("control_", unlist(strsplit(test$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = "")
-  }
-  underscoreCount <- str_count(test$BrCrCode[i], '_')
-  if(underscoreCount == 0){
-    print(paste("hit found, turn ", test$BrCrCode[i]," into ", as.character(str_extract(test$BrCrCode[i], "[aA-zZ]+")), "_",  as.numeric(str_extract(test$BrCrCode[i], "[0-9]+")), sep = "" ))
-    test$BrCrCode[i] <- paste(as.character(str_extract(test$BrCrCode[i], "[aA-zZ]+")), "_",  as.numeric(str_extract(test$BrCrCode[i], "[0-9]+")), sep = "")
-  }
-  rowBrCrCode[i] <- test$BrCrCode[i]
-  splitCode <- strsplit(rowBrCrCode[i], "_")
-  rowMother[i] <- sapply(splitCode, "[", 1)
-  rowFather[i] <- sapply(splitCode, "[", 2)
-  rowPlanted[i] <- as.numeric(test$Planted[i])
-  rowPsaDeath[i] <- as.numeric(test$PsaDeath[i])
-}
-print(rowMother)
-print(rowFather)
-firstDT <- data.table(rowBrCrCode, rowPlanted, rowPsaDeath, rowSurvival)
-motherDT <- data.table(rowMother, rowPlanted, rowPsaDeath, rowSurvival)
-fatherDT <- data.table(rowFather, rowPlanted, rowPsaDeath, rowSurvival)
-firstDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ BrCrCode, data = test, FUN = sum)
-motherDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ rowMother, data = test, FUN = sum)
-fatherDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ rowFather, data = test, FUN = sum)
-firstDT$rowSurvival <- 100 - ((firstDT$rowPsaDeath / firstDT$rowPlanted) * 100)
-motherDT$rowSurvival <- 100 - ((motherDT$rowPsaDeath / motherDT$rowPlanted) * 100)
-fatherDT$rowSurvival <- 100 - ((fatherDT$rowPsaDeath / fatherDT$rowPlanted) * 100)
-firstDT$rowSurvival <- format(round(firstDT$rowSurvival, 2), nsmall = 2)
-motherDT$rowSurvival <- format(round(motherDT$rowSurvival, 2), nsmall = 2)
-fatherDT$rowSurvival <- format(round(fatherDT$rowSurvival, 2), nsmall = 2)
-print(firstDT)
-print(motherDT)
-print(fatherDT)
+  #we now fill the tables with those data
+  firstDT <- motherDT <- fatherDT <- data.table(rowBrCrCode, rowPlanted, rowPsaDeath, rowSurvival)
+  #find duplicate named rows (breeding cross codes and sum those together for single rows)
+  firstDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ BrCrCode, data = test, FUN = sum)
+  motherDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ rowMother, data = test, FUN = sum)
+  fatherDT <- aggregate(cbind(rowPlanted, rowPsaDeath, rowSurvival) ~ rowFather, data = test, FUN = sum)
+  #the survival rate of a plant cross (or mother/father is calculated)
+  firstDT$rowSurvival <- 100 - ((firstDT$rowPsaDeath / firstDT$rowPlanted) * 100)
+  motherDT$rowSurvival <- 100 - ((motherDT$rowPsaDeath / motherDT$rowPlanted) * 100)
+  fatherDT$rowSurvival <- 100 - ((fatherDT$rowPsaDeath / fatherDT$rowPlanted) * 100)
+  #that gives a double floating point, let's make it 2dp to readability
+  firstDT$rowSurvival <- format(round(firstDT$rowSurvival, 2), nsmall = 2)
+  motherDT$rowSurvival <- format(round(motherDT$rowSurvival, 2), nsmall = 2)
+  fatherDT$rowSurvival <- format(round(fatherDT$rowSurvival, 2), nsmall = 2)
+  #print out all those tables for the user
+  print(firstDT)
+  print(motherDT)
+  print(fatherDT)
+  #write out .csv copies of all that data we created, and save to a suitable place,lets add timestamp and input file name also
+  write.csv(firstDT, file = "Parents.csv")
+  write.csv(motherDT, file = "Mothers.csv")
+  write.csv(fatherDT, file = "Fathers.csv")
+})
 ```
