@@ -76,6 +76,8 @@ system.time({
   firstDT$rowSurvival <- format(round(firstDT$rowSurvival, 2), nsmall = 2)
   motherDT$rowSurvival <- format(round(motherDT$rowSurvival, 2), nsmall = 2)
   fatherDT$rowSurvival <- format(round(fatherDT$rowSurvival, 2), nsmall = 2)
+  #print out that the sample is too small for certain mother/father/cross combinations with a tag (STS, sample too small < 40)
+  firstDT$rowBrCrCode <- ifelse(firstDT$rowPlanted<40, paste(firstDT$rowBrCrCode, "STS", sep = " "), firstDT$rowBrCrCode)
   #print out all those tables for the user
   print(firstDT)
   print(motherDT)
