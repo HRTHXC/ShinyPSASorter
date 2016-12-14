@@ -92,7 +92,9 @@ system.time({
   #grab the current time of execution, remove pucntuation
   executionTime <- gsub("[^[:digit:],]", "", Sys.time())
   #create that new directory for storing those new csv files output by the program
-  directory <- dir.create(paste("~/generatedOutput/", executionTime, filename, "/", sep = ""))
+  dir.create(paste("~/generatedOutput/", executionTime, filename, "/", sep = ""))
+  directory <- paste("~/generatedOutput/", executionTime, filename, "/", sep = "")
+  print(paste("output of these tables made to: ", directory))
   #write out .csv copies of all that data we created, and save to a suitable place,lets add timestamp and input file name also
   write.csv(firstDT, file = paste(directory, "Parents.csv", sep = ""))
   write.csv(motherDT, file = paste(directory, "Mothers.csv", sep = ""))
