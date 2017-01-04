@@ -1,0 +1,69 @@
+---
+title: "ShinyPSASorterwdplyr"
+author: "Harrison Crane"
+date: "19 December 2016"
+output: html_document
+---
+
+## Initial Table
+
+This contains the process of receiving and reading in the input CSV file from the user, and then taking columns BrCrCode, Planted and PsaDeath (those are the only ones we are interested in). We then calculate a new column which is the overall survival rate of the parental combo (percentage). We also account for any potential formatting issues with the document with a for loop and nested ifelse.
+
+For cases where malformed or incorrect BrCrCodes are added, we follow these rules:
+
+AA_123 = Correct
+
+AA123 = Incorrect (we append an underscore between the character type) = AA_123
+
+Hayward = Incorrect (green control, we state so and append the underscore in there) = control_Hayward
+
+T02/HM/b52/B12 = Incorrect (internal company controls, same process as Hayward, but we take the first piece of the code) = control_T02
+
+nothing = Incorrect (we create a placeholder, and give the user an error message to correct this if possible) = PH_123
+
+```{r initialTable}
+library(data.table)
+library(dplyr)
+library(stringr)
+testParents <- select(fread(file.choose(), header = TRUE, data.table = FALSE), BrCrCode, Planted, PsaDeaths)
+for(i in 1:(dim(testParents)[1])){
+  slashCount <- str_count(testParents$BrCrCode, '/')
+  ifelse(testParents$BrCrCode[i]=="", testParents$BrCrCode[i] <- paste("PH_", i, sep = ""), ifelse(slashCount==1, testParents$BrCrCode[i] <- unlist(strsplit(testParents$BrCrCode[i], split = '/', fixed=TRUE))[1], ifelse(slashCount==3, testParents$BrCrCode[i] <- paste("control_", unlist(strsplit(testParents$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = ""), "")))
+  underscoreCount <- str_count(testParents$BrCrCode, '_')
+  ifelse(underscoreCount[i] == 0, (testParents$BrCrCode[i] <- paste(as.character(str_extract(testParents$BrCrCode[i], "[aA-zZ]+")),
+	"_", as.numeric(str_extract(testParents$BrCrCode[i], "[0-9]+")), sep = "")), "")
+}
+testParents <- mutate(aggregate(cbind(Planted, PsaDeaths) ~ BrCrCode, data = testParents, FUN = sum), survivalrate = (format(round((value = 100 - ((as.numeric(PsaDeaths) / as.numeric(Planted)) * 100)), 2), nsmall = 2)))
+print(testParents)
+```
+
+## Split And Recreate
+
+Here, we now take the newly made table, and create two copies of it, one for each parent of the plant. We must split the characters in the BrCrCode correctly to prevent any formatting issues.
+
+```{r splitAndRecreate}
+testMothers <- testFathers <- testParents
+for(i in 1:(dim(testParents))){
+  testMothers$BrCrCode[i] <- unlist(strsplit(testParents$BrCrCode[i], split = '_', fixed=TRUE))[1]
+  testFathers$BrCrCode[i] <- unlist(strsplit(testParents$BrCrCode[i], split = '_', fixed=TRUE))[2]
+}
+nums <- sapply(testMothers, is.numeric)
+testMothers <- aggregate(cbind(Planted, PsaDeaths) ~ BrCrCode, data = testMothers, FUN = sum)
+testFathers <- aggregate(cbind(Planted, PsaDeaths) ~ BrCrCode, data = testFathers, FUN = sum)
+testMothers <- mutate(round(mutate(testMothers[ , nums], survivalrate = (100 - (PsaDeaths / Planted) * 100)), 2), MotherBrCrCode = testMothers$BrCrCode )
+testFathers <- mutate(round(mutate(testFathers[ , nums], survivalrate = (100 - (PsaDeaths / Planted) * 100)), 2), FatherBrCrCode = testFathers$BrCrCode )
+print(testMothers)
+print(testFathers)
+```
+
+## Downlaod the new CSV files
+
+It'll write the contents from those table into three seperate CSV files.
+
+```{r writetoCSV}
+write.csv(testParents, file = file.choose(new=TRUE))
+write.csv(testMothers, file = file.choose(new=TRUE))
+write.csv(testFathers, file = file.choose(new=TRUE))
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
