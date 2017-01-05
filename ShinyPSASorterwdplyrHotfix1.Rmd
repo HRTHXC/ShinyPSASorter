@@ -13,14 +13,7 @@ testParents <- select(fread(file.choose(), header = TRUE, data.table = FALSE), B
 slashCount <- str_count(testParents$BrCrCode, '/')
 underscoreCount <- str_count(testParents$BrCrCode, '_')
 spaceCheck <- str_count(testParents$BrCrCode, ' ')
-print("slash count")
-print(slashCount)
-print("underscore count")
-print(underscoreCount)
-print("has a space? 2 = yes, 1 = no")
-print(spaceCheck)
 for(i in 1:(dim(testParents)[1])){
-  print(testParents$BrCrCode[i])
   if(spaceCheck[i]==1){
     testParents$BrCrCode[i] <- gsub(" ", "_", testParents$BrCrCode[i])
     underscoreCount[i] = 1
@@ -43,7 +36,6 @@ for(i in 1:(dim(testParents))){
   testMothers$BrCrCode[i] <- unlist(strsplit(testParents$BrCrCode[i], split = '_', fixed=TRUE))[1]
   testFathers$BrCrCode[i] <- unlist(strsplit(testParents$BrCrCode[i], split = '_', fixed=TRUE))[2]
 }
-print(testFathers$BrCrCode[25])
 nums <- sapply(testMothers, is.numeric)
 testMothers <- aggregate(cbind(Planted, PsaDeaths) ~ BrCrCode, data = testMothers, FUN = sum)
 testFathers <- aggregate(cbind(Planted, PsaDeaths) ~ BrCrCode, data = testFathers, FUN = sum)
@@ -51,7 +43,4 @@ testMothers <- mutate(round(mutate(testMothers[ , nums], survivalrate = (100 - (
 testFathers <- mutate(round(mutate(testFathers[ , nums], survivalrate = (100 - (PsaDeaths / Planted) * 100)), 2), FatherBrCrCode = testFathers$BrCrCode )
 testMothers <- testMothers[c(4,1,2,3)]
 testFathers <- testFathers[c(4,1,2,3)]
-print(testParents)
-print(testMothers)
-print(testFathers)
 ```
