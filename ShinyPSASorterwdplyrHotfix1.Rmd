@@ -11,11 +11,21 @@ library(dplyr)
 library(stringr)
 testParents <- select(fread(file.choose(), header = TRUE, data.table = FALSE), BrCrCode, Planted, PsaDeaths)
 slashCount <- str_count(testParents$BrCrCode, '/')
+underscoreCount <- str_count(testParents$BrCrCode, '_')
+spaceCheck <- str_count(testParents$BrCrCode, ' ')
+print("slash count")
 print(slashCount)
+print("underscore count")
+print(underscoreCount)
+print("has a space? 2 = yes, 1 = no")
+print(spaceCheck)
 for(i in 1:(dim(testParents)[1])){
+  if(spaceCheck[i]==1){
+    testParents$BrCrCode[i] <- gsub(" ", "_", testParents$BrCrCode[i])
+    underscoreCount[i] = 1
+  }
   ifelse(testParents$BrCrCode[i]=="", testParents$BrCrCode[i] <- paste("PH_", paste(i, "ph", sep = ""), sep = ""), ifelse(slashCount[i]==1, testParents$BrCrCode[i] <- unlist(strsplit(testParents$BrCrCode[i], split = '/', fixed=TRUE))[1], ifelse(slashCount[i]==3, testParents$BrCrCode[i] <- paste("control_", unlist(strsplit(testParents$BrCrCode[i], split = '/', fixed=TRUE))[1], sep = ""), testParents$BrCrCode[i])))
-  underscoreCount <- str_count(testParents$BrCrCode, '_')
-  ifelse(underscoreCount[i] == 0, (testParents$BrCrCode[i] <- paste(as.character(str_extract(testParents$BrCrCode[i], "[aA-zZ]+")), "_", as.numeric(str_extract(testParents$BrCrCode[i], "[0-9]+")), sep = "")), "")
+  ifelse(underscoreCount[i] == 0, (testParents$BrCrCode[i] <- paste(as.character(str_extract(testParents$BrCrCode[i], "[aA-zZ]+")), "_", as.character(str_extract(testParents$BrCrCode[i], "[0-9]+")), sep = "")), "")
 }
 testParents$Planted <- as.numeric(testParents$Planted)
 testParents$PsaDeaths <- as.numeric(testParents$PsaDeaths)
