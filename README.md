@@ -43,6 +43,14 @@ In RStudio, you should also have certain packages install in order for the scrip
 
 Hit enter and let those repos download and install. It may take a little time, but then you can use the script. Total download required is about 3.8MB.
 
+It should also be notice that due to human error, 2D MATRIX TABLES DO NOT EXIST IN THIS VERSION. SORRY.
+
+## Development release to Shiny (.csv only)
+
+Current dev version being created can be found in "filteredDownload mumdad2d".
+
+Upon loading the program, the user is asked to load in a correctly-formatted CSV file, which can be found at http://shiny-dev.powerplant.pfr.co.nz/PsaBlockSummary/ . It will then do all the work required and then give you the option to download to .csv file for all different subsets
+
 Click the "Knit HTML" button, and the script will run. .Rmd releases require the user to select from the file menu a .csv file from the Shiny website, but afterwards, will output completely in the new window. It will also write those tables into individual .csv file for later analysis.
 
 ## Dev suggestions

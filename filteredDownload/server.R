@@ -49,21 +49,27 @@ shinyServer(function(input, output, session) {
   output$x1 = DT::renderDataTable(testParents, server = FALSE)
   output$x2 = DT::renderDataTable(testMothers, server = FALSE)
   output$x3 = DT::renderDataTable(testFathers, server = FALSE)
+  #output$x4 = DT::renderDataTable(2dmatrixoutput, server = FALSE)
   
   # download the filtered data
-  output$x4 = downloadHandler('mtcars-filtered.csv', content = function(file) {
+  output$x5 = downloadHandler('parents-filtered.csv', content = function(file) {
     s = input$x1_rows_all
     write.csv(testParents[s, , drop = FALSE], file)
   })
   
-  output$x5 = downloadHandler('mtcars-filtered.csv', content = function(file) {
+  output$x6 = downloadHandler('mothers-filtered.csv', content = function(file) {
     s = input$x2_rows_all
     write.csv(testMothers[s, , drop = FALSE], file)
   })
   
-  output$x6 = downloadHandler('mtcars-filtered.csv', content = function(file) {
+  output$x7 = downloadHandler('fathers-filtered.csv', content = function(file) {
     s = input$x3_rows_all
     write.csv(testFathers[s, , drop = FALSE], file)
   })
+  
+#  output$x8 = downloadHandler('overall2dmatrix.csv', content = function(file) {
+#    s = input$x3_rows_all
+#    write.csv(testFathers[s, , drop = FALSE], file)
+#  })
   
 })

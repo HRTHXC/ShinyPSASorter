@@ -1,0 +1,117 @@
+---
+title: "ShinyPSASorterInterm ( v0.9 (experimental) )"
+author: "Harrison Crane"
+github: "HRTHXC"
+date: "5 December 2016"
+output: html_document
+---
+
+```{r sampleCode, echo=FALSE, cache=FALSE}
+library(stringr)
+test <- read.csv(file.choose(), header = TRUE)
+rowCount <- nrow(test)
+print(test)
+uniqueCouple <- levels(test[1, "BrCrCode"])
+uniqueCoupleSize <- length(uniqueCouple)
+motherName <- as.character(str_extract(uniqueCouple, "[aA-zZ]+"))
+fatherName <- as.numeric(str_extract(uniqueCouple, "[0-9]+"))
+motherLength <- nchar(motherName)
+fatherLength <- nchar(fatherName)
+motherName <- unique(motherName)
+fatherName <- unique(fatherName)
+fatherName <- sort(fatherName, decreasing = FALSE)
+motherUniques <- length(motherName)
+fatherUniques <- length(fatherName)
+visibleOutputDebug <- 0
+psaDeathDebug <- 0
+plantedDebug <- 0
+endTablePrintout <- 0
+overallUniques <- 1
+for (i in 1:motherUniques){
+  for (j in 1:fatherUniques){
+    psaDeath <- 0
+    planted <- 0
+    lifeRate <- 0
+    searching <- paste(motherName[i], fatherName[j], sep = "")
+    for (k in 1:rowCount){
+      testingValue <- test[k, "BrCrCode"]
+      if(searching == testingValue){
+        psaDeath <- (psaDeath + test[k, "PsaDeaths"])
+        psaDeathDebug[overallUniques] <- psaDeath
+        planted <- (planted + test[k, "Planted"])
+        plantedDebug[overallUniques] <- planted
+      }
+    }
+    #create a vector for me!
+    lifeRate <- (100 - ((psaDeath / planted) * 100))
+    lifeRate <- format(round(lifeRate, 2), nsmall = 2)
+    visibleOutputDebug[overallUniques] <- ifelse(lifeRate==0, "NA", ifelse(lifeRate>40 , paste(lifeRate, "STS"), lifeRate))
+    overallUniques <- overallUniques + 1
+  }
+}
+mainTable <- matrix(visibleOutputDebug, nrow=fatherUniques, ncol=motherUniques, dimnames = list(fatherName, motherName))
+noquote(mainTable)
+overallPsaDeath <- ""
+overallPlanted <- ""
+overallLifeRate <- ""
+overallUniques <- 0
+finalString <- ""
+meanColumnNames <- paste("FatherName", "PSADeath", "Planted", "AverageAlive")
+#calculate mean for those father parings
+for(i in 1:fatherUniques){
+  psaDeath <- 0
+  planted <- 0
+  lifeRate <- 0
+  currentIndex <- 0
+  plantedPreCalc <- 0
+  outputString <- ""
+  for(j in 1:motherUniques){
+    currentIndex <- (((j-1)*fatherUniques)+i)
+    if(is.na(plantedDebug[currentIndex])){
+      next
+    }
+    planted <- planted + plantedDebug[currentIndex]
+    overallPlanted[i] <- planted
+    psaDeath <- psaDeath + psaDeathDebug[currentIndex]
+    overallPsaDeath[i] <- psaDeath
+    lifeRate <- (100 - ((psaDeath / planted) * 100))
+    lifeRate <- format(round(lifeRate, 2), nsmall = 2)
+    overallLifeRate[i] <- lifeRate
+  }
+}
+#required printing for table
+fatherNameMeanTable <- data.frame(fatherName, overallPlanted = overallPlanted[1:fatherUniques], overallPsaDeath = overallPsaDeath[1:fatherUniques], overallLifeRate = overallLifeRate[1:fatherUniques])
+print(as.data.frame.matrix(fatherNameMeanTable[1:fatherUniques, 1:4]))
+overallPsaDeath <- ""
+overallPlanted <- ""
+overallLifeRate <- ""
+overallUniques <- 0
+finalString <- ""
+meanColumnNames <- paste("MotherName", "PSADeath", "Planted", "AverageAlive")
+#calculate mean for those mother parings
+for(i in 1:motherUniques){
+  psaDeath <- 0
+  planted <- 0
+  lifeRate <- 0
+  currentIndex <- 0
+  plantedPreCalc <- 0
+  #motherMean values are grossly incorrect
+  outputString <- ""
+  for(j in 1:fatherUniques){
+    currentIndex <- (((i-1)*fatherUniques)+j)
+    if(is.na(plantedDebug[currentIndex])){
+      next
+    }
+    planted <- planted + plantedDebug[currentIndex]
+    overallPlanted[i] <- planted
+    psaDeath <- psaDeath + psaDeathDebug[currentIndex]
+    overallPsaDeath[i] <- psaDeath
+    lifeRate <- (100 - ((psaDeath / planted) * 100))
+    lifeRate <- format(round(lifeRate, 2), nsmall = 2)
+    overallLifeRate[i] <- lifeRate
+  }
+}
+#required printing for table
+motherNameMeanTable <- data.frame(motherName, overallPlanted = overallPlanted[1:motherUniques], overallPsaDeath = overallPsaDeath[1:motherUniques], overallLifeRate = overallLifeRate[1:motherUniques])
+print(as.data.frame.matrix(motherNameMeanTable[1:motherUniques, 1:4]))
+```

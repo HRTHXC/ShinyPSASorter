@@ -7,13 +7,19 @@
 #    http://shiny.rstudio.com/
 #
 
-library(shiny)
 
 fluidPage(
   title = 'DataTables Information',
   h1('ShinyPSASorter'),
-  h6('If you don;t have a data file yet, plaese go to here (Family Consolidation):'),
-  tags$a(href="http://shiny-dev.powerplant.pfr.co.nz/PsaBlockSummary/", "Click here!"),
+  h6("If you don't have a data file yet, please go to here (Family Consolidation):", tags$a(href="http://shiny-dev.powerplant.pfr.co.nz/PsaBlockSummary/", "Click here!")),
+  
+  mainPanel(
+    tableOutput('contents')
+  ),
+  
+  ## Access file as input$upload_file$datapath inside a reactive element in server.R
+  fileInput("upload_file", "Upload CSV file"),
+  
   h2('Combination data output'),
   fluidRow(
     column(6, DT::dataTableOutput('x1'))
@@ -35,11 +41,14 @@ fluidPage(
   fluidRow(
     p(class = 'text-center', downloadButton('x7', 'Download Data (Fathers)'))
   ),
-  h2('2D matrix output')#,
-  #fluidRow(
-  #  column(6, DT::dataTableOutput('x4'))
-  #),
-  #fluidRow(
-  #  p(class = 'text-center', downloadButton('x8', 'Download Data (Fathers)'))
-  #)
+  h2('2D matrix output'),
+  fluidRow(
+    column(6, DT::dataTableOutput('x4'))
+  ),
+  fluidRow(
+    p(class = 'text-center', downloadButton('x8', 'Download Data (2D Matrix)'))
+  ),
+  fluidRow(
+    h3(textOutput("overallStats"))
+  )
 )
