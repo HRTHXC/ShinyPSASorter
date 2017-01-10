@@ -21,13 +21,16 @@ shinyServer(function(input, output, session) {
     slashCount <- str_count(testParents$BrCrCode, '/')
     underscoreCount <- str_count(testParents$BrCrCode, '_')
     spaceCheck <- str_count(testParents$BrCrCode, ' ')
-    overallSurvival <- -(1 - ((sum(as.numeric(testParents$PsaDeaths)) / sum(as.numeric(testParents$Planted))) * 100))
     testParents <- cleanBrCrCodeInFile(testParents, slashCount, underscoreCount, spaceCheck)
     testParents$Planted <- as.numeric(testParents$Planted)
     testParents$PsaDeaths <- as.numeric(testParents$PsaDeaths)
-    #find more suitable location to calculate a verbatium table?
     testParents$survivalrate <- format(round((value = 100 - ((testParents$PsaDeaths / testParents$Planted) * 100)), 2), nsmall = 2)
     return(testParents)
+  }
+  
+  overallSurvival <- function(testParents){
+    overallSurvival <- format(round(((sum(as.numeric(testParents$PsaDeaths)) / sum(as.numeric(testParents$Planted))) * 100), 2), nsmall = 2)
+    return(overallSurvival)
   }
   
   cleanBrCrCodeInFile <- function(x, slashCount, underscoreCount, spaceCheck){
@@ -51,6 +54,7 @@ shinyServer(function(input, output, session) {
       x$MotherCode <- as.character(str_extract(x$BrCrCode, "[aA-zZ]+"))
       x$FatherCode <- as.character(str_extract(x$BrCrCode, "[0-9]+"))
     }
+    print(underscoreCount)
     return(x)
   }
   
@@ -61,13 +65,18 @@ shinyServer(function(input, output, session) {
   }
   
   doubleUnderscoreCheck <- function(z, testMothers, testFathers){
-    underscoreCount <- str_count(z$BrCrCode, '_')
-    if(underscoreCount==2){
-      z$MotherCode <- testMothers$BrCrCode <- unlist(strsplit(z$BrCrCode, split = '_', fixed=TRUE))[1]
-      z$FatherCode <- testFathers$BrCrCode <- unlist(strsplit(z$BrCrCode, split = '_', fixed=TRUE))[3]
+    for(i in 1:length(z$BrCrCode)){
+      underscoreCount <- str_count(z$BrCrCode[i], '_')
+      print(underscoreCount)
+      if(underscoreCount==2){
+        z$MotherCode[i] <- testMothers$BrCrCode[i] <- unlist(strsplit(z$BrCrCode[i], split = '_', fixed=TRUE))[1]
+        z$FatherCode[i] <- testFathers$BrCrCode[i] <- unlist(strsplit(z$BrCrCode[i], split = '_', fixed=TRUE))[3]
+      }
+      else{
+        z$MotherCode[i] <- testMothers$BrCrCode[i] <- unlist(strsplit(z$BrCrCode[i], split = '_', fixed=TRUE))[1]
+        z$FatherCode[i] <- testFathers$BrCrCode[i] <- unlist(strsplit(z$BrCrCode[i], split = '_', fixed=TRUE))[2]
+      }
     }
-    z$MotherCode <- testMothers$BrCrCode <- unlist(strsplit(z$BrCrCode, split = '_', fixed=TRUE))[1]
-    z$FatherCode <- testFathers$BrCrCode <- unlist(strsplit(z$BrCrCode, split = '_', fixed=TRUE))[2]
     return(z)
   }
   
@@ -85,14 +94,52 @@ shinyServer(function(input, output, session) {
     return(testFathers)
   }
   
+  twoDTableCreation <- function(testMothers, testFathers, testParents, testParentsVerbaitum){
+    twoDtable <- matrix(c("NA"), nrow=length(testMothers$BrCrCode), ncol=length(testFathers$BrCrCode))
+    rownames(twoDtable) <- testMothers$BrCrCode
+    colnames(twoDtable) <- testFathers$BrCrCode
+    l <- 1
+    m <- 0
+    for(i in 1:length(testParents$BrCrCode)){
+      motherCodeFound <- 0
+      fatherCodeFound <- 0
+      motherCodeFoundString <- ""
+      fatherCodeFoundString <- ""
+      for(j in 1:length(testMothers$BrCrCode)){
+        if(grepl(testMothers$BrCrCode[j], testParents$MotherCode[l])){
+          motherCodeFound <- j
+          motherCodeFoundString <- testMothers$BrCrCode[j]
+          break
+        }
+      }
+      for(k in 1:length(testFathers$BrCrCode)){
+        if(grepl(testFathers$BrCrCode[k], testParents$FatherCode[l])){
+          fatherCodeFound <- k
+          fatherCodeFoundString <- testFathers$BrCrCode[k]
+          m <- m + 1
+          break
+        }
+      }
+      for(n in 1:length(testParentsVerbaitum$BrCrCode)){
+        if(grepl(testParentsVerbaitum$BrCrCode[n], testParents$BrCrCode[i])){
+          ifelse(testParentsVerbaitum$survivalrate[n] < 40, (twoDtable[motherCodeFound, fatherCodeFound] = paste(testParentsVerbaitum$survivalrate[n], "STS", sep = " ")), (twoDtable[motherCodeFound, fatherCodeFound] = testParentsVerbaitum$survivalrate[n]))
+          break;
+        }
+      }
+      l <- l + 1
+    }
+    twoDtableDF <- data.frame(twoDtable)
+    return(twoDtableDF)
+  }
+  
   output$contents = renderTable({
     if (controlVar$fileUploaded || controlVar$outputTable){
       testParents <- cleanFile(dat)
+      overallSurvival <- overallSurvival(testParents)
       testMothers <- testFathers <- testParentsVerbaitum <- testParents <- aggregate(cbind(Planted, PsaDeaths) ~ BrCrCode+MotherCode+FatherCode+survivalrate, data = testParents, FUN = sum)
       testParentsVerbaitum <- verbatimSanity(testParentsVerbaitum)
       testParents <- doubleUnderscoreCheck(testParents, testMothers, testFathers)
       output$x1 = DT::renderDataTable(testParentsVerbaitum, server = FALSE)
-      # download the filtered data
       output$x5 = downloadHandler('parents-filtered.csv', content = function(file) {
         s = input$x1_rows_all
         write.csv(testParentsVerbaitum[s, , drop = FALSE], file)
@@ -109,58 +156,14 @@ shinyServer(function(input, output, session) {
         s = input$x3_rows_all
         write.csv(testFathers[s, , drop = FALSE], file)
       })
-      # twoDtable <- matrix(c("NA"), nrow=length(testMothers$BrCrCode), ncol=length(testFathers$BrCrCode))
-      # rownames(twoDtable) <- testMothers$BrCrCode
-      # colnames(twoDtable) <- testFathers$BrCrCode
-      # l <- 1
-      # m <- 0
-      # for(i in 1:length(testParents$BrCrCode)){
-      #   motherCodeFound <- 0
-      #   fatherCodeFound <- 0
-      #   motherCodeFoundString <- ""
-      #   fatherCodeFoundString <- ""
-      #   for(j in 1:length(testMothers$BrCrCode)){
-      #     if(grepl(testMothers$BrCrCode[j], testParents$MotherCode[l])){
-      #       motherCodeFound <- j
-      #       motherCodeFoundString <- testMothers$BrCrCode[j]
-      #       break
-      #     }
-      #   }
-      #   for(k in 1:length(testFathers$BrCrCode)){
-      #     if(grepl(testFathers$BrCrCode[k], testParents$FatherCode[l])){
-      #       fatherCodeFound <- k
-      #       fatherCodeFoundString <- testFathers$BrCrCode[k]
-      #       m <- m + 1
-      #       break
-      #     }
-      #   }
-      #   for(n in 1:length(testParentsVerbaitum$BrCrCode)){
-      #     if(grepl(testParentsVerbaitum$BrCrCode[n], testParents$BrCrCode[i])){
-      #       ifelse(testParentsVerbaitum$survivalrate[n] < 40, (twoDtable[motherCodeFound, fatherCodeFound] = paste(testParentsVerbaitum$survivalrate[n], "STS", sep = " ")), (twoDtable[motherCodeFound, fatherCodeFound] = testParentsVerbaitum$survivalrate[n]))
-      #       break;
-      #     }
-      #   }
-      #   l <- l + 1
-      # }
-      # twoDtableDF <- data.frame(twoDtable)
-      # return()
+      twoDtableDF <- twoDTableCreation(testMothers, testFathers, testParents, testParentsVerbaitum)
+      output$x4 = DT::renderDataTable(twoDtableDF, server = FALSE)
+      output$x8 = downloadHandler('overall2dmatrix.csv', content = function(file) {
+        s = input$x4_rows_all
+        write.csv(twoDtableDF[s, , drop = FALSE], file)
+      })
+      #grab sum of planted and psadeaths somehow idfk
+      output$overallStats <- renderText(paste("In this block, ", sum(testParents$Planted), " plants were planted, and ", sum(testParents$PsaDeaths), " plants surcumb to PSA disease. This is a survival rate of ~", overallSurvival, "%", sep = ""))
     }
   })
-  
-  #
-  # 
-  # 
-  # 
-  # 
-  # 
-  # output$x4 = DT::renderDataTable(twoDtableDF, server = FALSE)
-  # 
-
-  # 
-
-  # 
-  # output$x8 = downloadHandler('overall2dmatrix.csv', content = function(file) {
-  #   s = input$x4_rows_all
-  #   write.csv(twoDtableDF[s, , drop = FALSE], file)
-  # })
 })
