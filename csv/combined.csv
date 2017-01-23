@@ -1,0 +1,601 @@
+CrossName,BrCrCode,Synonym,sexTestRes,Program,Subprogram,Concept,Funding,Contract,Breeder,Planted,nonPsa,PsaDeaths,Remaining,Percent_Remaining
+,aAA _314,,,,,,,,,22,0,0,22,100
+,Hayward,,,Green,Control(toDEL),,,,,22,0,0,22,100
+T02/HM/b52/B12,T02/HM/b52/B12,Green 11,,Green,Control(toDEL),,,,Hinga Marsh,9,0,0,9,100
+K12.1069,MA_502,MA_502,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,96,2,3,91,94.79
+K12.1065,MA_503,MA_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,541,12,37,492,90.94
+K12.1066,MA_529,MA_529,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,235,3,13,219,93.19
+K12.1041,MF_148,MF_148,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,70,0,7,63,90
+K12.1036,MF_503,MF_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,140,2,7,131,93.57
+K12.1034,MF_505,MF_505,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,284,3,12,269,94.72
+K12.1032,MF_507,MF_507,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,144,10,22,112,77.78
+K12.1035,MF_529,MF_529,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,7,0,0,7,100
+K12.0864,MU_503,MU_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,324,6,13,305,94.14
+K12.0866,MU_507,MU_507,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,129,2,10,117,90.7
+K12.0856,NA_502,NA_502,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,31,0,2,29,93.55
+K12.0859,NA_503,NA_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,40,2,0,38,95
+K12.0857,NA_505,NA_505,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,6,0,0,6,100
+K12.0858,NA_529,NA_529,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,281,6,8,267,95.02
+K12.0854,NB_503,NB_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,2,0,0,2,100
+K12.0869,NG_502,NG_502,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,16,1,3,12,75
+K12.0870,NG_504,NG_504,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,34,0,0,34,100
+K12.0873,NG_505,NG_505,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,154,8,17,129,83.77
+K12.0871,NG_506,NG_506,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,38,0,3,35,92.11
+K12.0872,NG_507,NG_507,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,322,13,41,268,83.23
+K12.0875,NG_522,NG_522,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,50,1,4,45,90
+K12.0582,QA_531,QA_531,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,40,0,4,36,90
+K12.0591,QC_539,QC_539,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,93,1,14,78,83.87
+K12.0593,QD_530,QD_530,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,90,6,11,73,81.11
+K12.0595,QD_545,QD_545,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,71,3,15,53,74.65
+K12.0597,QE_541,QE_541,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,92,4,60,28,30.43
+K09.0004,ZI132,ZI132,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,176,2,10,164,93.18
+K09.0003,ZS131,ZS131,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,130,3,14,113,86.92
+K12.0834,NH_523,NH_523,,Green,Green,,Parental,PT1401,Elizabeth Popowski,7,0,0,7,100
+K12.0833,NH_528,NH_528,,Green,Green,,Parental,PT1401,Elizabeth Popowski,7,1,1,5,71.43
+K14.0139,cXA_702,,,Red,,,Commercial,NC1601,Canhong Cheng,1,0,0,1,100
+K14.0368,cAC_726,,,Red,,,,,Paul Datson,36,0,0,36,100
+K14.0346,cAD_714,,,Red,,,,,Paul Datson,20,0,0,20,100
+K14.0348,cAD_727,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0347,cAD_740,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0350,cAE_476,,,Red,,,,,Paul Datson,18,0,0,18,100
+K14.0351,cAE_718,,,Red,,,,,Paul Datson,27,0,0,27,100
+K14.0338,cD_712,,,Red,,,,,Paul Datson,5,0,0,5,100
+K14.0335,cD_718,,,Red,,,,,Paul Datson,2,0,0,2,100
+K14.0336,cD_735,,,Red,,,,,Paul Datson,28,0,0,28,100
+K14.0355,cJ_735,,,Red,,,,,Paul Datson,13,0,0,13,100
+K14.0380,cP_711,,,Red,,,,,Paul Datson,26,0,0,26,100
+K14.0332,cU_738,,,Red,,,,,Paul Datson,40,0,0,40,100
+K14.0323,cW_732,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0322,cW_737,,,Red,,,,,Paul Datson,12,0,0,12,100
+K14.0232,cXZ_760,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0235,cYB_476/1,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0240,cYB_476/2,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0247,cYB_761,,,Red,,,,,Paul Datson,6,0,0,6,100
+K14.0273,cYH_714,,,Red,,,,,Paul Datson,30,0,0,30,100
+K14.0274,cYJ_476,,,Red,,,,,Paul Datson,18,0,0,18,100
+K14.0275,cYK_714,,,Red,,,,,Paul Datson,25,0,0,25,100
+K14.0276,cYK_742,,,Red,,,,,Paul Datson,29,0,0,29,100
+K14.0303,cZ_476,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0384,rPD_717,,,Red,,,,,Paul Datson,23,0,0,23,100
+K14.0383,rPD_738,,,Red,,,,,Paul Datson,25,0,0,25,100
+K14.0382,rPD_743,,,Red,,,,,Paul Datson,23,0,0,23,100
+K14.0251,TG_707,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0252,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0253,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0254,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0255,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0256,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K12.1067,MA_502,MA_502,,Green,Green,,Commercial,NC1399,Elizabeth Popowski,96,2,3,91,94.79
+K12.1068,MA_502,MA_502,,Green,Green,,Commercial,NC1400,Elizabeth Popowski,96,2,3,91,94.79
+K12.1069,MA_502,MA_502,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,96,2,3,91,94.79
+K12.1070,MA_502,MA_502,,Green,Green,,Commercial,NC1402,Elizabeth Popowski,96,2,3,91,94.79
+K12.1071,MA_502,MA_502,,Green,Green,,Commercial,NC1403,Elizabeth Popowski,96,2,3,91,94.79
+K12.1072,MA_502,MA_502,,Green,Green,,Commercial,NC1404,Elizabeth Popowski,96,2,3,91,94.79
+K12.1073,MA_502,MA_502,,Green,Green,,Commercial,NC1405,Elizabeth Popowski,96,2,3,91,94.79
+K12.1074,MA_502,MA_502,,Green,Green,,Commercial,NC1406,Elizabeth Popowski,96,2,3,91,94.79
+K12.1075,MA_502,MA_502,,Green,Green,,Commercial,NC1407,Elizabeth Popowski,96,2,3,91,94.79
+K12.1035,MF_529,MF_529,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,7,0,0,7,100
+K12.1036,MF_529,MF_529,,Green,Green,,Commercial,NC1402,Elizabeth Popowski,7,0,0,7,100
+K12.1037,MF_529,MF_529,,Green,Green,,Commercial,NC1403,Elizabeth Popowski,7,0,0,7,100
+K12.1038,MF_529,MF_529,,Green,Green,,Commercial,NC1404,Elizabeth Popowski,7,0,0,7,100
+K12.1039,MF_529,MF_529,,Green,Green,,Commercial,NC1405,Elizabeth Popowski,7,0,0,7,100
+K12.1040,MF_529,MF_529,,Green,Green,,Commercial,NC1406,Elizabeth Popowski,7,0,0,7,100
+K12.1041,MF_529,MF_529,,Green,Green,,Commercial,NC1407,Elizabeth Popowski,7,0,0,7,100
+K12.1042,MF_529,MF_529,,Green,Green,,Commercial,NC1408,Elizabeth Popowski,7,0,0,7,100
+K12.1043,MF_529,MF_529,,Green,Green,,Commercial,NC1409,Elizabeth Popowski,7,0,0,7,100
+K12.1044,MF_529,MF_529,,Green,Green,,Commercial,NC1410,Elizabeth Popowski,7,0,0,7,100
+K12.0873,NG_505,NG_505,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,154,8,17,129,83.77
+K12.0874,NG_505,NG_505,,Green,Green,,Commercial,NC1402,Elizabeth Popowski,154,8,17,129,83.77
+K12.0875,NG_505,NG_505,,Green,Green,,Commercial,NC1403,Elizabeth Popowski,154,8,17,129,83.77
+K12.0876,NG_505,NG_505,,Green,Green,,Commercial,NC1404,Elizabeth Popowski,154,8,17,129,83.77
+K12.0877,NG_505,NG_505,,Green,Green,,Commercial,NC1405,Elizabeth Popowski,154,8,17,129,83.77
+K12.0878,NG_505,NG_505,,Green,Green,,Commercial,NC1406,Elizabeth Popowski,154,8,17,129,83.77
+K12.0879,NG_505,NG_505,,Green,Green,,Commercial,NC1407,Elizabeth Popowski,154,8,17,129,83.77
+K12.0880,NG_505,NG_505,,Green,Green,,Commercial,NC1408,Elizabeth Popowski,154,8,17,129,83.77
+K12.0881,NG_505,NG_505,,Green,Green,,Commercial,NC1409,Elizabeth Popowski,154,8,17,129,83.77
+K12.0882,NG_505,NG_505,,Green,Green,,Commercial,NC1410,Elizabeth Popowski,154,8,17,129,83.77
+K12.0883,NG_505,NG_505,,Green,Green,,Commercial,NC1411,Elizabeth Popowski,154,8,17,129,83.77
+K12.0884,NG_505,NG_505,,Green,Green,,Commercial,NC1412,Elizabeth Popowski,154,8,17,129,83.77
+K12.0833,NH_528,NH_528,,Green,Green,,Parental,PT1401,Elizabeth Popowski,7,1,1,5,71.43
+K12.0834,NH_528,NH_528,,Green,Green,,Parental,PT1402,Elizabeth Popowski,7,1,1,5,71.43
+K12.0835,NH_528,NH_528,,Green,Green,,Parental,PT1403,Elizabeth Popowski,7,1,1,5,71.43
+K12.0836,NH_528,NH_528,,Green,Green,,Parental,PT1404,Elizabeth Popowski,7,1,1,5,71.43
+K12.0837,NH_528,NH_528,,Green,Green,,Parental,PT1405,Elizabeth Popowski,7,1,1,5,71.43
+K12.0838,NH_528,NH_528,,Green,Green,,Parental,PT1406,Elizabeth Popowski,7,1,1,5,71.43
+K12.0839,NH_528,NH_528,,Green,Green,,Parental,PT1407,Elizabeth Popowski,7,1,1,5,71.43
+K12.0840,NH_528,NH_528,,Green,Green,,Parental,PT1408,Elizabeth Popowski,7,1,1,5,71.43
+K12.0841,NH_528,NH_528,,Green,Green,,Parental,PT1409,Elizabeth Popowski,7,1,1,5,71.43
+K12.0842,NH_528,NH_528,,Green,Green,,Parental,PT1410,Elizabeth Popowski,7,1,1,5,71.43
+K12.0843,NH_528,NH_528,,Green,Green,,Parental,PT1411,Elizabeth Popowski,7,1,1,5,71.43
+K12.0844,NH_528,NH_528,,Green,Green,,Parental,PT1412,Elizabeth Popowski,7,1,1,5,71.43
+K12.0845,NH_528,NH_528,,Green,Green,,Parental,PT1413,Elizabeth Popowski,7,1,1,5,71.43
+K12.0846,NH_528,NH_528,,Green,Green,,Parental,PT1414,Elizabeth Popowski,7,1,1,5,71.43
+K14.0323,cW_732,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0324,cW_733,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0325,cW_734,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0326,cW_735,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0327,cW_736,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0328,cW_737,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0329,cW_738,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0330,cW_739,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0331,cW_740,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0332,cW_741,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0333,cW_742,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0334,cW_743,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0383,rPD_738,,,Red,,,,,Paul Datson,25,0,0,25,100
+K14.0384,rPD_739,,,Red,,,,,Paul Datson,25,0,0,25,100
+K14.0385,rPD_740,,,Red,,,,,Paul Datson,25,0,0,25,100
+K14.0252,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0253,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0254,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0255,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0256,,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+,Hayward,,,Green,Control(toDEL),,,,,22,0,0,22,100
+T02/HM/b52/B12,T02/HM/b52/B12,Green 11,,Green,Control(toDEL),,,,Hinga Marsh,9,0,0,9,100
+K12.1069,MA_502,MA_502,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,96,2,3,91,94.79
+K12.1065,MA_503,MA_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,541,12,37,492,90.94
+K12.1066,MA_529,MA_529,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,235,3,13,219,93.19
+K12.1041,MF_148,MF_148,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,70,0,7,63,90
+K12.1036,MF_503,MF_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,140,2,7,131,93.57
+K12.1034,MF_505,MF_505,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,284,3,12,269,94.72
+K12.1032,MF_507,MF_507,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,144,10,22,112,77.78
+K12.1035,MF_529,MF_529,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,7,0,0,7,100
+K12.0864,MU_503,MU_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,324,6,13,305,94.14
+K12.0866,MU_507,MU_507,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,129,2,10,117,90.7
+K12.0856,NA_502,NA_502,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,31,0,2,29,93.55
+K12.0859,NA_503,NA_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,40,2,0,38,95
+K12.0857,NA_505,NA_505,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,6,0,0,6,100
+K12.0858,NA_529,NA_529,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,281,6,8,267,95.02
+K12.0854,NB_503,NB_503,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,2,0,0,2,100
+K12.0869,NG_502,NG_502,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,16,1,3,12,75
+K12.0870,NG_504,NG_504,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,34,0,0,34,100
+K12.0873,NG_505,NG_505,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,154,8,17,129,83.77
+K12.0871,NG_506,NG_506,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,38,0,3,35,92.11
+K12.0872,NG_507,NG_507,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,322,13,41,268,83.23
+K12.0875,NG_522,NG_522,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,50,1,4,45,90
+K12.0582,QA_531,QA_531,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,40,0,4,36,90
+K12.0591,QC_539,QC_539,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,93,1,14,78,83.87
+K12.0593,QD_530,QD_530,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,90,6,11,73,81.11
+K12.0595,QD_545,QD_545,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,71,3,15,53,74.65
+K12.0597,QE_541,QE_541,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,92,4,60,28,30.43
+K09.0004,ZI132,ZI132,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,176,2,10,164,93.18
+K09.0003,ZS131,ZS131,,Green,Green,,Commercial,NC1401,Elizabeth Popowski,130,3,14,113,86.92
+K12.0834,NH_523,NH_523,,Green,Green,,Parental,PT1401,Elizabeth Popowski,7,0,0,7,100
+K12.0833,NH_528,NH_528,,Green,Green,,Parental,PT1401,Elizabeth Popowski,7,1,1,5,71.43
+K14.0139,cXA_702,,,Red,,,Commercial,NC1601,Canhong Cheng,1,0,0,1,100
+K14.0368,cAC_726,,,Red,,,,,Paul Datson,36,0,0,36,100
+K14.0346,cAD_714,,,Red,,,,,Paul Datson,20,0,0,20,100
+K14.0348,cAD_727,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0347,cAD_740,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0350,cAE_476,,,Red,,,,,Paul Datson,18,0,0,18,100
+K14.0351,cAE_718,,,Red,,,,,Paul Datson,27,0,0,27,100
+K14.0338,cD_712,,,Red,,,,,Paul Datson,5,0,0,5,100
+K14.0335,cD_718,,,Red,,,,,Paul Datson,2,0,0,2,100
+K14.0336,cD_735,,,Red,,,,,Paul Datson,28,0,0,28,100
+K14.0355,cJ_735,,,Red,,,,,Paul Datson,13,0,0,13,100
+K14.0380,cP_711,,,Red,,,,,Paul Datson,26,0,0,26,100
+K14.0332,cU_738,,,Red,,,,,Paul Datson,40,0,0,40,100
+K14.0323,cW_732,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0322,cW_737,,,Red,,,,,Paul Datson,12,0,0,12,100
+K14.0232,cXZ_760,,,Red,,,,,Paul Datson,21,0,0,21,100
+K14.0235,cYB_476/1,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0240,cYB_476/2,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0247,cYB_761,,,Red,,,,,Paul Datson,6,0,0,6,100
+K14.0273,cYH_714,,,Red,,,,,Paul Datson,30,0,0,30,100
+K14.0274,cYJ_476,,,Red,,,,,Paul Datson,18,0,0,18,100
+K14.0275,cYK_714,,,Red,,,,,Paul Datson,25,0,0,25,100
+K14.0276,cYK_742,,,Red,,,,,Paul Datson,29,0,0,29,100
+K14.0303,cZ_476,,,Red,,,,,Paul Datson,1,0,0,1,100
+K14.0384,rPD_717,,,Red,,,,,Paul Datson,23,0,0,23,100
+K14.0383,rPD_738,,,Red,,,,,Paul Datson,25,0,0,25,100
+K14.0382,rPD_743,,,Red,,,,,Paul Datson,23,0,0,23,100
+K14.0251,TG_707,,,Red,,,,,Paul Datson,12,0,1,11,91.67
+K14.0753,GL_287/1,,Female,Gold,2x Yellow,,,NC1601,Kirsten Hoeata,63,14,24,25,39.68
+K14.0753,GL_287/1,,Male,Gold,2x Yellow,,,NC1601,Kirsten Hoeata,13,3,7,3,23.08
+K14.0753,GL_287/1,,,Gold,2x Yellow,,,,Kirsten Hoeata,67,10,26,31,46.27
+K13.0533,aCK_227,,Male,Gold,4x Yellow,,,,Alan Seal,17,0,5,12,70.59
+K13.0536,aCK_406,,,Gold,4x Yellow,,,,Alan Seal,20,1,1,18,90
+K13.0531,aCK_605,,Male,Gold,4x Yellow,,,,Alan Seal,28,0,4,24,85.71
+K14.0253,cYF_248,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,14,1,2,11,78.57
+K14.0253,cYF_248,,,Gold,4x Yellow,,,,Paul Datson,17,2,4,11,64.71
+K14.0252,cYF_376,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,14,2,5,7,50
+K14.0252,cYF_376,,Negative,Gold,4x Yellow,,,PT1601,Paul Datson,2,0,1,1,50
+K14.0252,cYF_376,,,Gold,4x Yellow,,,,Paul Datson,17,5,0,12,70.59
+K14.0257,cYG_219,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,15,1,2,12,80
+K14.0257,cYG_219,,Negative,Gold,4x Yellow,,,PT1601,Paul Datson,1,0,0,1,100
+K14.0257,cYG_219,,,Gold,4x Yellow,,,,Paul Datson,18,1,6,11,61.11
+K14.0256,cYG_248,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,16,1,1,14,87.5
+K14.0256,cYG_248,,Negative,Gold,4x Yellow,,,PT1601,Paul Datson,3,0,0,3,100
+K14.0256,cYG_248,,Unknown,Gold,4x Yellow,,,PT1601,Paul Datson,2,0,1,1,50
+K14.0256,cYG_248,,,Gold,4x Yellow,,,,Paul Datson,13,0,0,13,100
+K14.0255,cYG_298,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,14,2,5,7,50
+K14.0255,cYG_298,,Negative,Gold,4x Yellow,,,PT1601,Paul Datson,1,1,0,0,0
+K14.0255,cYG_298,,,Gold,4x Yellow,,,,Paul Datson,16,3,4,9,56.25
+K14.0319,eJ_219,,,Gold,4x Yellow,,,,Paul Datson,32,0,11,21,65.62
+K14.0318,eJ_248,,,Gold,4x Yellow,,,,Paul Datson,32,0,5,27,84.38
+K14.0317,eJ_298,,,Gold,4x Yellow,,,,Paul Datson,28,3,9,16,57.14
+K14.0316,eJ_376,,,Gold,4x Yellow,,,,Paul Datson,24,4,7,13,54.17
+K14.0269,eM_298,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,14,0,1,13,92.86
+K14.0270,eM_376,,,Gold,4x Yellow,,,,Paul Datson,31,1,2,28,90.32
+K13.0524,GT_227,,Male,Gold,4x Yellow,,,,Alan Seal,16,0,3,13,81.25
+K13.0526,GT_381,,Male,Gold,4x Yellow,,,,Alan Seal,20,1,4,15,75
+K13.0527,GT_406,,Male,Gold,4x Yellow,,,,Alan Seal,18,1,0,17,94.44
+K13.0527,GT_406,,Negative,Gold,4x Yellow,,,,Alan Seal,2,0,0,2,100
+K13.0521,GT_457,,Male,Gold,4x Yellow,,,,Alan Seal,14,0,1,13,92.86
+K13.0522,GT_605,,Male,Gold,4x Yellow,,,,Alan Seal,17,1,1,15,88.24
+K13.0523,GT_606,,Male,Gold,4x Yellow,,,,Alan Seal,11,0,0,11,100
+K13.0523,GT_606,,Negative,Gold,4x Yellow,,,,Alan Seal,1,0,0,1,100
+K14.0288,kAB_219,,,Gold,4x Yellow,,,,Paul Datson,32,6,3,23,71.88
+K14.0289,kAB_708,,,Gold,4x Yellow,,,,Paul Datson,28,2,3,23,82.14
+K14.0309,kAG_710,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,13,2,3,8,61.54
+K14.0309,kAG_710,,,Gold,4x Yellow,,,,Paul Datson,18,2,7,9,50
+K13.0542,rGO_227,,Male,Gold,4x Yellow,,,,Alan Seal,19,3,4,12,63.16
+K13.0546,rGO_321,,Male,Gold,4x Yellow,,,,Alan Seal,34,1,3,30,88.24
+K13.0546,rGO_321,,Negative,Gold,4x Yellow,,,,Alan Seal,15,0,3,12,80
+K13.0544,rGO_381,,Male,Gold,4x Yellow,,,,Alan Seal,23,0,11,12,52.17
+K13.0545,rGO_406,,Male,Gold,4x Yellow,,,,Alan Seal,56,0,4,52,92.86
+K13.0545,rGO_406,,Negative,Gold,4x Yellow,,,,Alan Seal,4,0,0,4,100
+K13.0539,rGO_457,,Male,Gold,4x Yellow,,,,Alan Seal,19,1,6,12,63.16
+K13.0539,rGO_457,,Negative,Gold,4x Yellow,,,,Alan Seal,7,0,0,7,100
+K13.0539,rGO_457,,Unknown,Gold,4x Yellow,,,,Alan Seal,1,0,1,0,0
+K13.0540,rGO_605,,Male,Gold,4x Yellow,,,,Alan Seal,18,0,1,17,94.44
+K13.0541,rGO_606,,Male,Gold,4x Yellow,,,,Alan Seal,18,0,0,18,100
+K13.0543,rGO_607,,Male,Gold,4x Yellow,,,,Alan Seal,96,2,12,82,85.42
+K13.0543,rGO_607,,Unknown,Gold,4x Yellow,,,,Alan Seal,1,0,0,1,100
+K14.0292,rJV_709,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,9,1,2,6,66.67
+K14.0292,rJV_709,,Negative,Gold,4x Yellow,,,PT1601,Paul Datson,1,0,0,1,100
+K14.0292,rJV_709,,,Gold,4x Yellow,,,,Paul Datson,22,5,0,17,77.27
+K14.0291,rJV_757,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,14,1,4,9,64.29
+K14.0291,rJV_757,,,Gold,4x Yellow,,,,Paul Datson,17,2,4,11,64.71
+K14.0296,rJW_758,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,16,4,6,6,37.5
+K14.0296,rJW_758,,Negative,Gold,4x Yellow,,,PT1601,Paul Datson,2,0,2,0,0
+K14.0296,rJW_758,,Unknown,Gold,4x Yellow,,,PT1601,Paul Datson,1,1,0,0,0
+K14.0296,rJW_758,,,Gold,4x Yellow,,,,Paul Datson,13,0,6,7,53.85
+K13.0551,rJZ_227,,Male,Gold,4x Yellow,,,,Alan Seal,11,0,1,10,90.91
+K13.0551,rJZ_227,,Negative,Gold,4x Yellow,,,,Alan Seal,2,0,0,2,100
+K13.0553,rJZ_381,,Male,Gold,4x Yellow,,,,Alan Seal,14,0,6,8,57.14
+K13.0548,rJZ_457,,,Gold,4x Yellow,,,,Alan Seal,10,0,1,9,90
+K13.0549,rJZ_605,,Male,Gold,4x Yellow,,,,Alan Seal,20,0,1,19,95
+K14.0297,rLZ_710,,Female,Gold,4x Yellow,,,PT1601,Paul Datson,11,0,4,7,63.64
+K14.0297,rLZ_710,,,Gold,4x Yellow,,,,Paul Datson,20,0,4,16,80
+K14.0295,rMY_710,,,Gold,4x Yellow,,,,Paul Datson,35,3,18,14,40
+K14.0293,rMY_757,,,Gold,4x Yellow,,,,Paul Datson,32,2,12,18,56.25
+K14.0294,rMY_758,,,Gold,4x Yellow,,,,Paul Datson,27,1,16,10,37.04
+K14.0465,rPK_393,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,17,1,5,11,64.71
+K14.0465,rPK_393,,Male,Gold,4x Yellow,,,NC1601,Russell Lowe,160,7,45,108,67.5
+K14.0465,rPK_393,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,1,0,0
+K14.0465,rPK_393,,,Gold,4x Yellow,,,,Russell Lowe,1,0,0,1,100
+T01/RL/b13/F04,T01/RL/b13/F04,Yellow 3; T02.13-15-14g; G3; ZesY002; Y3,,Gold,4x Yellow,,,,Russell Lowe,10,0,0,10,100
+T02/HM/b52/B12,T02/HM/b52/B12,Green 11,,Green,Control(toDEL),,,NC1301,Hinga Marsh,2,0,0,2,100
+K13.0653,RM_111,,,Green,Green,,,,Elizabeth Popowski,1,0,0,1,100
+K14.0454,rPJ_232,,,Hybrid,Novel,,,,Russell Lowe,1,0,0,1,100
+K14.0456,rPJ_235/1,,,Hybrid,Novel,,,,Russell Lowe,4,0,0,4,100
+K14.0457,rPJ_235/2,,,Hybrid,Novel,,,,Russell Lowe,38,1,0,37,97.37
+K14.0458,rPJ_235/3,,,Hybrid,Novel,,,,Russell Lowe,30,1,2,27,90
+K14.0464,rPK_273,,,Hybrid,Novel,,,,Russell Lowe,99,6,17,76,76.77
+K14.0509,ZI_1001,,Female,Hybrid,Novel,,,NC1601,Luis Gea,156,12,6,138,88.46
+K14.0509,ZI_1001,,Male,Hybrid,Novel,,,NC1601,Luis Gea,27,2,0,25,92.59
+K14.0509,ZI_1001,,Unknown,Hybrid,Novel,,,NC1601,Luis Gea,2,0,0,2,100
+K14.0509,ZI_1001,,,Hybrid,Novel,,,,Luis Gea,24,2,1,21,87.5
+K14.0507,ZI_304/1,,Female,Hybrid,Novel,,,NC1601,Luis Gea,34,3,0,31,91.18
+K14.0507,ZI_304/1,,Male,Hybrid,Novel,,,NC1601,Luis Gea,5,0,0,5,100
+K14.0987,,,,Hybrid,Novel,,,,Luis Gea,11,1,0,10,90.91
+K14.0988,,,,Hybrid,Novel,,,,Luis Gea,5,0,0,5,100
+K14.0345,cAD_476,,,Red,2x Red,,,PT1601,Paul Datson,32,4,2,26,81.25
+K14.0346,cAD_714,,,Red,2x Red,,,PT1601,Paul Datson,32,0,0,32,100
+K14.0320,cW_476,,,Red,2x Red,,,PT1601,Paul Datson,40,2,8,30,75
+K14.0323,cW_732,,,Red,2x Red,,,PT1601,Paul Datson,40,1,3,36,90
+K14.0322,cW_737,,,Red,2x Red,,,PT1601,Paul Datson,48,5,4,39,81.25
+K14.0340,cYZ_476,,,Red,2x Red,,,PT1601,Paul Datson,32,6,2,24,75
+K14.0343,cYZ_714,,,Red,2x Red,,,PT1601,Paul Datson,40,0,4,36,90
+K14.0342,cYZ_720,,,Red,2x Red,,,PT1601,Paul Datson,24,3,3,18,75
+K14.0303,cZ_476,,,Red,2x Red,,,PT1601,Paul Datson,40,3,0,37,92.5
+K14.0305,cZ_720,,,Red,2x Red,,,PT1601,Paul Datson,32,2,4,26,81.25
+rG8,rG8,Red 19; Red19; R19; 19-2817,,Red,2x Red,,,PT1301,Russell Lowe,3,0,0,3,100
+K14.0774,rOG_287,,Female,Red,2x Red,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0204,cXB_715,,Female,Red,4x Red,,,PT1601,Canhong Cheng,29,0,1,28,96.55
+K14.0204,cXB_715,,Male,Red,4x Red,,,PT1601,Canhong Cheng,14,0,2,12,85.71
+K14.0205,cXB_750,,Female,Red,4x Red,,,PT1601,Canhong Cheng,14,5,1,8,57.14
+K14.0205,cXB_750,,,Red,4x Red,,,,Canhong Cheng,17,1,5,11,64.71
+K14.0206,cXB_751,,Female,Red,4x Red,,,PT1601,Canhong Cheng,17,0,3,14,82.35
+K14.0206,cXB_751,,Negative,Red,4x Red,,,PT1601,Canhong Cheng,1,1,0,0,0
+K14.0206,cXB_751,,,Red,4x Red,,,,Canhong Cheng,15,0,5,10,66.67
+K14.0156,cXG_704,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,1,0,11,91.67
+K14.0156,cXG_704,,Male,Red,4x Red,,,PT1601,Canhong Cheng,7,1,0,6,85.71
+K14.0157,cXG_752,,Female,Red,4x Red,,,PT1601,Canhong Cheng,17,4,2,11,64.71
+K14.0157,cXG_752,,,Red,4x Red,,,,Canhong Cheng,15,2,1,12,80
+K14.0158,cXG_753,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,1,2,9,75
+K14.0158,cXG_753,,,Red,4x Red,,,,Canhong Cheng,20,1,3,16,80
+K14.0160,cXH_704,,Female,Red,4x Red,,,PT1601,Canhong Cheng,17,2,3,12,70.59
+K14.0160,cXH_704,,Male,Red,4x Red,,,PT1601,Canhong Cheng,9,0,2,7,77.78
+K14.0161,cXH_752,,Female,Red,4x Red,,,PT1601,Canhong Cheng,16,1,2,13,81.25
+K14.0164,cXH_755,,Female,Red,4x Red,,,PT1601,Canhong Cheng,11,1,0,10,90.91
+K14.0164,cXH_755,,,Red,4x Red,,,,Canhong Cheng,19,1,1,17,89.47
+K14.0166,cXI_704,,Female,Red,4x Red,,,PT1601,Canhong Cheng,5,0,0,5,100
+K14.0166,cXI_704,,Male,Red,4x Red,,,PT1601,Canhong Cheng,3,0,0,3,100
+K14.0168,cXI_753,,Female,Red,4x Red,,,PT1601,Canhong Cheng,17,1,1,15,88.24
+K14.0168,cXI_753,,,Red,4x Red,,,,Canhong Cheng,16,1,1,14,87.5
+K14.0170,cXI_755,,Female,Red,4x Red,,,PT1601,Canhong Cheng,16,2,0,14,87.5
+K14.0170,cXI_755,,,Red,4x Red,,,,Canhong Cheng,16,1,1,14,87.5
+K14.0171,cXJ_701,,Female,Red,4x Red,,,PT1601,Canhong Cheng,13,1,0,12,92.31
+K14.0171,cXJ_701,,Male,Red,4x Red,,,PT1601,Canhong Cheng,8,0,0,8,100
+K14.0171,cXJ_701,,Unknown,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0177,cXJ_702,,Female,Red,4x Red,,,PT1601,Canhong Cheng,4,0,1,3,75
+K14.0177,cXJ_702,,Male,Red,4x Red,,,PT1601,Canhong Cheng,3,1,0,2,66.67
+K14.0172,cXJ_704,,Female,Red,4x Red,,,PT1601,Canhong Cheng,4,0,1,3,75
+K14.0172,cXJ_704,,Male,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0172,cXJ_704,,Negative,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0173,cXJ_752,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,0,2,10,83.33
+K14.0173,cXJ_752,,,Red,4x Red,,,,Canhong Cheng,19,1,2,16,84.21
+K14.0174,cXJ_753,,Female,Red,4x Red,,,PT1601,Canhong Cheng,13,1,3,9,69.23
+K14.0174,cXJ_753,,Negative,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0174,cXJ_753,,,Red,4x Red,,,,Canhong Cheng,11,0,1,10,90.91
+K14.0176,cXJ_755,,Female,Red,4x Red,,,PT1601,Canhong Cheng,11,1,3,7,63.64
+K14.0176,cXJ_755,,,Red,4x Red,,,,Canhong Cheng,21,2,1,18,85.71
+K14.0178,cXK_715,,Female,Red,4x Red,,,PT1601,Canhong Cheng,14,1,2,11,78.57
+K14.0178,cXK_715,,Male,Red,4x Red,,,PT1601,Canhong Cheng,7,1,0,6,85.71
+K14.0183,cXK_716,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,1,1,10,83.33
+K14.0183,cXK_716,,Male,Red,4x Red,,,PT1601,Canhong Cheng,11,1,5,5,45.45
+K14.0185,cXK_744,,Female,Red,4x Red,,,PT1601,Canhong Cheng,9,0,2,7,77.78
+K14.0185,cXK_744,,Unknown,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0185,cXK_744,,,Red,4x Red,,,,Canhong Cheng,8,1,2,5,62.5
+K14.0184,cXK_745,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,0,0,12,100
+K14.0184,cXK_745,,,Red,4x Red,,,,Canhong Cheng,12,0,2,10,83.33
+K14.0181,cXK_750,,Female,Red,4x Red,,,PT1601,Canhong Cheng,11,1,2,8,72.73
+K14.0182,cXK_751,,Female,Red,4x Red,,,PT1601,Canhong Cheng,13,1,2,10,76.92
+K14.0182,cXK_751,,Negative,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0182,cXK_751,,Unknown,Red,4x Red,,,PT1601,Canhong Cheng,1,0,1,0,0
+K14.0182,cXK_751,,,Red,4x Red,,,,Canhong Cheng,2,0,0,2,100
+K14.0180,cXK_752,,Female,Red,4x Red,,,PT1601,Canhong Cheng,15,0,2,13,86.67
+K14.0180,cXK_752,,,Red,4x Red,,,,Canhong Cheng,2,0,0,2,100
+K14.0186,cXL_715,,Female,Red,4x Red,,,PT1601,Canhong Cheng,25,3,3,19,76
+K14.0186,cXL_715,,Male,Red,4x Red,,,PT1601,Canhong Cheng,14,4,0,10,71.43
+K14.0189,cXL_716,,Female,Red,4x Red,,,PT1601,Canhong Cheng,42,6,9,27,64.29
+K14.0189,cXL_716,,Male,Red,4x Red,,,PT1601,Canhong Cheng,20,2,2,16,80
+K14.0189,cXL_716,,Negative,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0191,cXL_744,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,0,3,9,75
+K14.0191,cXL_744,,Unknown,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0191,cXL_744,,,Red,4x Red,,,,Canhong Cheng,15,1,4,10,66.67
+K14.0190,cXL_745,,Female,Red,4x Red,,,PT1601,Canhong Cheng,19,0,4,15,78.95
+K14.0190,cXL_745,,,Red,4x Red,,,,Canhong Cheng,1,0,0,1,100
+K14.0187,cXL_750,,,Red,4x Red,,,,Canhong Cheng,25,1,4,20,80
+K14.0188,cXL_751,,,Red,4x Red,,,,Canhong Cheng,21,2,4,15,71.43
+K14.0192,cXM_715,,Female,Red,4x Red,,,PT1601,Canhong Cheng,30,3,2,25,83.33
+K14.0192,cXM_715,,Male,Red,4x Red,,,PT1601,Canhong Cheng,17,0,1,16,94.12
+K14.0192,cXM_715,,Negative,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0192,cXM_715,,Unknown,Red,4x Red,,,PT1601,Canhong Cheng,3,0,0,3,100
+K14.0192,cXM_715,,,Red,4x Red,,,,Canhong Cheng,22,1,3,18,81.82
+K14.0196,cXM_745,,Female,Red,4x Red,,,PT1601,Canhong Cheng,10,0,1,9,90
+K14.0193,cXM_750,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,1,2,9,75
+K14.0193,cXM_750,,,Red,4x Red,,,,Canhong Cheng,20,3,1,16,80
+K14.0194,cXM_751,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,1,2,9,75
+K14.0194,cXM_751,,Negative,Red,4x Red,,,PT1601,Canhong Cheng,1,0,0,1,100
+K14.0198,cXN_715,,Female,Red,4x Red,,,PT1601,Canhong Cheng,11,2,0,9,81.82
+K14.0198,cXN_715,,Male,Red,4x Red,,,PT1601,Canhong Cheng,11,1,1,9,81.82
+K14.0201,cXN_716,,Female,Red,4x Red,,,PT1601,Canhong Cheng,31,5,4,22,70.97
+K14.0201,cXN_716,,Male,Red,4x Red,,,PT1601,Canhong Cheng,16,3,1,12,75
+K14.0203,cXN_744,,Female,Red,4x Red,,,PT1601,Canhong Cheng,15,0,1,14,93.33
+K14.0203,cXN_744,,,Red,4x Red,,,,Canhong Cheng,2,0,0,2,100
+K14.0202,cXN_745,,Female,Red,4x Red,,,PT1601,Canhong Cheng,14,2,1,11,78.57
+K14.0202,cXN_745,,,Red,4x Red,,,,Canhong Cheng,19,1,2,16,84.21
+K14.0199,cXN_750,,Female,Red,4x Red,,,PT1601,Canhong Cheng,12,1,0,11,91.67
+K14.0199,cXN_750,,,Red,4x Red,,,,Canhong Cheng,14,3,1,10,71.43
+K14.0200,cXN_751,,Female,Red,4x Red,,,PT1601,Canhong Cheng,17,3,4,10,58.82
+K14.0200,cXN_751,,Unknown,Red,4x Red,,,PT1601,Canhong Cheng,2,2,0,0,0
+K14.0200,cXN_751,,,Red,4x Red,,,,Canhong Cheng,12,1,2,9,75
+K14.0254,cYF_873,,Female,Red,4x Red,,,PT1601,Paul Datson,17,5,1,11,64.71
+K14.0254,cYF_873,,Male,Red,4x Red,,,PT1601,Paul Datson,10,0,0,10,100
+K14.0254,cYF_873,,Negative,Red,4x Red,,,PT1601,Paul Datson,2,1,1,0,0
+K14.0287,kAB_873,,,Red,4x Red,,,,Paul Datson,32,5,1,26,81.25
+16A Russell,16A Russell,,,Gold,2x Yellow,,,PT1301,Luis Gea,22,1,6,15,68.18
+CK0015,CK0015,G4A4,,Gold,2x Yellow,,,,,4,0,2,2,50
+Hort16A OP,Hort16A OP,,,Gold,2x Yellow,,,NC1301,Russell Lowe,3,0,0,3,100
+K13.0538,aCK_249,,Male,Gold,4x Yellow,,,NC1501,Alan Seal,17,0,3,14,82.35
+K13.0537,aCK_321,,Female,Gold,4x Yellow,,,NC1501,Alan Seal,12,0,3,9,75
+K13.0537,aCK_321,,Male,Gold,4x Yellow,,,NC1501,Alan Seal,5,0,1,4,80
+eH16,eH16,,,Gold,4x Yellow,,,NC1301,Canhong Cheng,16,0,1,15,93.75
+K13.0529,GT_249,,Female,Gold,4x Yellow,,,NC1501,Alan Seal,3,1,1,1,33.33
+K13.0529,GT_249,,Male,Gold,4x Yellow,,,NC1501,Alan Seal,6,1,3,2,33.33
+K13.0529,GT_249,,Negative,Gold,4x Yellow,,,NC1501,Alan Seal,1,0,1,0,0
+K13.0528,GT_321,,Female,Gold,4x Yellow,,,NC1501,Alan Seal,1,0,0,1,100
+K13.0528,GT_321,,Male,Gold,4x Yellow,,,NC1501,Alan Seal,97,1,37,59,60.82
+K13.0525,GT_607,,Female,Gold,4x Yellow,,,NC1501,Alan Seal,6,0,2,4,66.67
+K13.0525,GT_607,,Male,Gold,4x Yellow,,,NC1501,Alan Seal,4,0,0,4,100
+K13.0525,GT_607,,Negative,Gold,4x Yellow,,,NC1501,Alan Seal,1,0,0,1,100
+GU22,GU22,,,Gold,4x Yellow,,,NC1301,Russell Lowe,4,0,1,3,75
+GU23,GU23,,,Gold,4x Yellow,,,NC1301,Russell Lowe,4,0,3,1,25
+GZ22,GZ22,,,Gold,4x Yellow,,,NC1301,Russell Lowe,6,0,0,6,100
+rJE_295,rJE_295,,,Gold,4x Yellow,,,NC1301,Russell Lowe,3,0,1,2,66.67
+rJE_296,rJE_296,,,Gold,4x Yellow,,,NC1301,Russell Lowe,3,0,0,3,100
+K13.0280,rJH_297,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,36,0,10,26,72.22
+K13.0280,rJH_297,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,8,1,3,4,50
+K14.0096,rJV_022,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,4,0,0,4,100
+K14.0096,rJV_022,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0096,rJV_022,,Unknown,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,0,2,100
+K14.0093,rJV_237,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,10,0,0,10,100
+K14.0093,rJV_237,,Male,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0093,rJV_237,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,3,0,1,2,66.67
+K14.0093,rJV_237,,,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0095,rJV_272,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,1,1,50
+K14.0094,rJV_386,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,6,0,1,5,83.33
+K13.0286,rJW_297,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,14,0,11,3,21.43
+K13.0286,rJW_297,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,1,0,0
+K13.0285,rJW_406,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,33,0,6,27,81.82
+K13.0285,rJW_406,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,2,0,0,2,100
+K13.0285,rJW_406,,Negative,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,0,1,100
+K13.0290,rJW_437,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,24,0,17,7,29.17
+K13.0290,rJW_437,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,1,0,0
+K13.0289,rJW_441/432,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,84,0,66,18,21.43
+K13.0289,rJW_441/432,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,9,0,9,0,0
+K13.0289,rJW_441/432,,Negative,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,1,0,0
+K13.0289,rJW_441/432,,Unknown,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,0,1,100
+K12.0213,rJZ_022,rJZ_022,,Gold,4x Yellow,,,NC1601,Russell Lowe,4,0,1,3,75
+K13.0556,rJZ_249,,Male,Gold,4x Yellow,,,NC1501,Alan Seal,47,0,18,29,61.7
+K13.0556,rJZ_249,,Negative,Gold,4x Yellow,,,NC1501,Alan Seal,1,0,0,1,100
+K12.0212,rJZ_321,rJZ_321,,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K13.0552,rJZ_607,,Male,Gold,4x Yellow,,,NC1501,Alan Seal,55,0,21,34,61.82
+K13.0552,rJZ_607,,Negative,Gold,4x Yellow,,,NC1501,Alan Seal,1,0,0,1,100
+K13.0552,rJZ_607,,Unknown,Gold,4x Yellow,,,NC1501,Alan Seal,1,0,0,1,100
+K14.0389,rKG_224,,,Gold,4x Yellow,,,,Russell Lowe,303,0,138,165,54.46
+K12.0510,rKG_227,rKG_227,,Gold,4x Yellow,,,NC1301,Russell Lowe,1,0,1,0,0
+K13.0299,rKG_248,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,232,0,98,134,57.76
+K13.0299,rKG_248,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,20,0,5,15,75
+K13.0299,rKG_248,,Unknown,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,0,1,100
+K13.0298,rKG_297,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,39,0,11,28,71.79
+K13.0298,rKG_297,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,3,0,1,2,66.67
+K13.0300,rKG_298,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,66,0,32,34,51.52
+K13.0300,rKG_298,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,1,0,0
+K13.0300,rKG_298,,Unknown,Gold,4x Yellow,,,NC1501,Russell Lowe,2,0,1,1,50
+K12.0388,rKG_376,rKG_376,,Gold,4x Yellow,,,NC1301,Russell Lowe,1,0,0,1,100
+K12.0388,rKG_376,rKG_376,,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,0,2,100
+K12.0387,rKG_379,rKG_379,,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K13.0297,rKG_406,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,23,0,8,15,65.22
+K14.0128,rLP_022,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,0,2,100
+K14.0128,rLP_022,,Male,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0128,rLP_022,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,4,0,0,4,100
+K14.0128,rLP_022,,Unknown,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,0,2,100
+K13.0327,rLU_406,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,20,0,6,14,70
+K13.0327,rLU_406,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,2,0,1,1,50
+K13.0327,rLU_406,,Negative,Gold,4x Yellow,,,NC1501,Russell Lowe,2,0,1,1,50
+K13.0349,rLY_437,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,18,2,16,0,0
+K13.0349,rLY_437,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,2,0,2,0,0
+K13.0347,rLY_441/432,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,23,0,21,2,8.7
+K13.0347,rLY_441/432,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,4,0,3,1,25
+K13.0347,rLY_441/432,,Negative,Gold,4x Yellow,,,NC1501,Russell Lowe,3,0,3,0,0
+K12.0172,rMK_367,rMK_367,,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K12.0217,rML_360,rML_360,,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,1,0,0
+K12.0216,rML_361,rML_361,,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,2,0,0
+K12.0124,rMP_360,rMP_360,,Gold,4x Yellow,,,NC1601,Russell Lowe,6,0,2,4,66.67
+K13.0295,rMR_219,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,47,1,19,27,57.45
+K13.0295,rMR_219,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,9,0,4,5,55.56
+K13.0292,rMR_297,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,85,0,24,61,71.76
+K13.0292,rMR_297,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,10,0,3,7,70
+K13.0292,rMR_297,,Negative,Gold,4x Yellow,,,NC1501,Russell Lowe,2,0,1,1,50
+K13.0291,rMR_406,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,29,0,5,24,82.76
+K13.0291,rMR_406,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,2,0,1,1,50
+K12.0142,rMU_321,rMU_321,,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K12.0139,rMU_367,rMU_367,,Gold,4x Yellow,,,NC1301,Russell Lowe,4,0,1,3,75
+K12.0194,rNO_022,rNO_022,,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K13.0309,rNP_297,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,38,2,29,7,18.42
+K13.0309,rNP_297,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,3,0,1,2,66.67
+K13.0313,rNP_437,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,85,6,68,11,12.94
+K13.0313,rNP_437,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,4,0,2,2,50
+K13.0314,rNP_441/432,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,163,0,130,33,20.25
+K13.0314,rNP_441/432,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,13,0,8,5,38.46
+K13.0314,rNP_441/432,,Negative,Gold,4x Yellow,,,NC1501,Russell Lowe,2,0,2,0,0
+K13.0314,rNP_441/432,,Unknown,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,1,0,0
+K12.0149,rNR_321,rNR_321,,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,1,0,0
+K12.0184,rOA_321,rOA_321,,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,1,1,50
+K12.0180,rOA_361,rOA_361,,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,0,2,100
+K13.0359,rPC_248,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,35,1,6,28,80
+K13.0359,rPC_248,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,9,0,1,8,88.89
+K13.0359,rPC_248,,Negative,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,1,0,0
+K13.0358,rPC_297,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,68,0,36,32,47.06
+K13.0358,rPC_297,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,8,0,4,4,50
+K13.0358,rPC_297,,Negative,Gold,4x Yellow,,,NC1501,Russell Lowe,7,0,5,2,28.57
+K13.0360,rPC_298,,Female,Gold,4x Yellow,,,NC1501,Russell Lowe,37,7,26,4,10.81
+K13.0360,rPC_298,,Male,Gold,4x Yellow,,,NC1501,Russell Lowe,1,0,0,1,100
+K14.0100,rPG_393,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,28,0,9,19,67.86
+K14.0100,rPG_393,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,7,0,3,4,57.14
+K14.0100,rPG_393,,Unknown,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,1,0,0
+K14.0446,rPH_022/2,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,4,0,1,3,75
+K14.0446,rPH_022/2,,Male,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0446,rPH_022/2,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,3,0,1,2,66.67
+K14.0113,rPK_237,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,19,0,3,16,84.21
+K14.0113,rPK_237,,Male,Gold,4x Yellow,,,NC1601,Russell Lowe,3,0,0,3,100
+K14.0113,rPK_237,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,25,0,4,21,84
+K14.0113,rPK_237,,Unknown,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,1,1,50
+K14.0113,rPK_237,,,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,2,0,0
+K14.0114,rPK_298,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,0,2,100
+K14.0114,rPK_298,,Male,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0114,rPK_298,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,3,0,0,3,100
+K14.0114,rPK_298,,Unknown,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,0,2,100
+K14.0115,rPK_376,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0115,rPK_376,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,12,0,0,12,100
+K14.0116,rPK_380,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0116,rPK_380,,Male,Gold,4x Yellow,,,NC1601,Russell Lowe,3,0,1,2,66.67
+K14.0116,rPK_380,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,9,0,0,9,100
+K14.0116,rPK_380,,Unknown,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,0,1,100
+K14.0465,rPK_393,,Female,Gold,4x Yellow,,,NC1601,Russell Lowe,6,0,3,3,50
+K14.0465,rPK_393,,Male,Gold,4x Yellow,,,NC1601,Russell Lowe,1,0,1,0,0
+K14.0465,rPK_393,,Negative,Gold,4x Yellow,,,NC1601,Russell Lowe,2,0,1,1,50
+rHK_247,rHK_247,,,Red,2x Red,,,NC1301,Russell Lowe,1,0,0,1,100
+rHQ_286,rHQ_286,,,Red,2x Red,,,NC1501,Russell Lowe,1,0,0,1,100
+rLD_328,rLD_328,,,Red,2x Red,,,NC1301,Luis Gea,6,0,5,1,16.67
+rLL_142,rLL_142,,,Red,2x Red,,,NC1301,Luis Gea,8,1,3,4,50
+K12.0202,rNP_321,rNP_321,,Red,4x Red,,,NC1601,Russell Lowe,1,0,0,1,100
+K13.1120,UJ_583,,,Green,Green,,Commercial,NC1501,Elizabeth Popowski,190,43,17,130,68.42
+K13.1049,UM_583,,,Green,Green,,Commercial,NC1501,Elizabeth Popowski,40,13,5,22,55
+K13.1063,US_583,,,Green,Green,,Commercial,NC1501,Elizabeth Popowski,115,54,16,45,39.13
+K13.1066,UT_574,,,Green,Green,,Commercial,NC1501,Elizabeth Popowski,46,19,6,21,45.65
+K13.1067,UT_583,,,Green,Green,,Commercial,NC1501,Elizabeth Popowski,87,46,20,21,24.14
+K12.0573,rG_351,rG_351,Female,Red,2x Red,,Commercial,NC1574,Russell Lowe,10,0,5,5,50
+K12.0533,rMA_351,rMA_351,Female,Red,2x Red,,Commercial,NC1574,Russell Lowe,21,0,11,10,47.62
+K12.0533,rMA_351,rMA_351,Male,Red,2x Red,,Commercial,NC1574,Russell Lowe,1,0,1,0,0
+K12.0533,rMA_351,rMA_351,Negative,Red,2x Red,,Commercial,NC1574,Russell Lowe,3,0,0,3,100
+K12.0533,rMA_351,rMA_351,Unknown,Red,2x Red,,Commercial,NC1574,Russell Lowe,1,0,1,0,0
+K13.1299,rOC_208,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,39,0,30,9,23.08
+K13.1299,rOC_208,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,7,0,6,1,14.29
+K13.1300,rOC_287,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,113,5,88,20,17.7
+K13.1300,rOC_287,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,7,0,6,1,14.29
+K13.1300,rOC_287,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,4,0,4,0,0
+K13.1308,rOD_287,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,198,2,187,9,4.55
+K13.1308,rOD_287,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,13,0,13,0,0
+K13.1308,rOD_287,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,1,0,1,0,0
+K13.1313,rOD_352,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,167,12,154,1,0.6
+K13.1313,rOD_352,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,11,0,11,0,0
+K13.1314,rOD_354,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,203,5,193,5,2.46
+K13.1314,rOD_354,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,10,0,10,0,0
+K13.1315,rOE_208,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,174,2,130,42,24.14
+K13.1315,rOE_208,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,8,0,5,3,37.5
+K13.1316,rOE_287,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,152,3,125,24,15.79
+K13.1316,rOE_287,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,9,0,6,3,33.33
+K13.1316,rOE_287,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,2,0,2,0,0
+K13.1321,rOE_352,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,107,6,94,7,6.54
+K13.1321,rOE_352,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,8,0,6,2,25
+K13.1321,rOE_352,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,2,0,2,0,0
+K13.1322,rOE_354,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,221,0,175,46,20.81
+K13.1322,rOE_354,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,13,1,11,1,7.69
+K13.1322,rOE_354,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,20,0,15,5,25
+K13.1324,rOF_287,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,131,9,94,28,21.37
+K13.1324,rOF_287,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,8,0,8,0,0
+K13.1324,rOF_287,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,3,0,2,1,33.33
+K13.1328,rOF_348,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,27,2,24,1,3.7
+K13.1328,rOF_348,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,1,0,1,0,0
+K13.1329,rOF_352,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,15,0,15,0,0
+K13.1332,rOG_287,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,154,6,117,31,20.13
+K13.1332,rOG_287,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,7,0,3,4,57.14
+K13.1332,rOG_287,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,3,0,3,0,0
+K13.1332,rOG_287,,Unknown,Red,2x Red,,Commercial,NC1501,Russell Lowe,1,0,1,0,0
+K13.0932,rOJ _208,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,220,1,99,120,54.55
+K13.0932,rOJ _208,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,13,1,10,2,15.38
+K13.0935,rOJ _240,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,504,1,228,275,54.56
+K13.0935,rOJ _240,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,29,0,14,15,51.72
+K13.0935,rOJ _240,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,2,0,2,0,0
+K13.0935,rOJ _240,,Unknown,Red,2x Red,,Commercial,NC1501,Russell Lowe,3,0,3,0,0
+K13.0933,rOJ _241,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,213,1,102,110,51.64
+K13.0933,rOJ _241,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,16,0,7,9,56.25
+K13.0933,rOJ _241,,Unknown,Red,2x Red,,Commercial,NC1501,Russell Lowe,2,0,1,1,50
+K13.0937,rOJ _244,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,581,2,228,351,60.41
+K13.0937,rOJ _244,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,41,1,18,22,53.66
+K13.0937,rOJ _244,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,2,0,0,2,100
+K13.0937,rOJ _244,,Unknown,Red,2x Red,,Commercial,NC1501,Russell Lowe,2,0,1,1,50
+K13.0938,rOJ _248,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,73,0,19,54,73.97
+K13.0938,rOJ _248,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,3,0,1,2,66.67
+K13.0934,rOJ _287,,Female,Red,2x Red,,Commercial,NC1501,Russell Lowe,250,1,98,151,60.4
+K13.0934,rOJ _287,,Male,Red,2x Red,,Commercial,NC1501,Russell Lowe,10,0,5,5,50
+K13.0934,rOJ _287,,Negative,Red,2x Red,,Commercial,NC1501,Russell Lowe,5,0,1,4,80
+K13.0941,rOJ _M101,,,Red,2x Red,,Commercial,NC1501,Russell Lowe,35,0,9,26,74.29
+K12.0037,cAH_801,cAH_801,Female,Red,4x Red,,Commercial,NC1574,Canhong Cheng,15,0,2,13,86.67
+K12.0037,cAH_801,cAH_801,Male,Red,4x Red,,Commercial,NC1574,Canhong Cheng,1,0,1,0,0
+K12.0037,cAH_801,cAH_801,Negative,Red,4x Red,,Commercial,NC1574,Canhong Cheng,2,0,0,2,100
+K12.0037,cAH_801,cAH_801,Unknown,Red,4x Red,,Commercial,NC1574,Canhong Cheng,1,0,0,1,100
+K12.0026,rNP_874,,Female,Red,4x Red,,Commercial,NC1574,Canhong Cheng,26,0,7,19,73.08
+K12.0026,rNP_874,,Male,Red,4x Red,,Commercial,NC1574,Canhong Cheng,2,0,0,2,100
+K12.0026,rNP_874,,Negative,Red,4x Red,,Commercial,NC1574,Canhong Cheng,5,0,0,5,100
+K13.1302,rOC_346,,Female,Red,4x Red,,Commercial,NC1501,Russell Lowe,19,0,10,9,47.37
+K13.0973,rPA _R01,,Female,Red,4x Red,,Commercial,NC1501,Russell Lowe,43,0,5,38,88.37
+K13.0973,rPA _R01,,Male,Red,4x Red,,Commercial,NC1501,Russell Lowe,5,0,2,3,60
+K13.0973,rPA _R01,,Negative,Red,4x Red,,Commercial,NC1501,Russell Lowe,3,0,0,3,100
+K13.0973,rPA _R01,,,Red,4x Red,,Commercial,NC1501,Russell Lowe,60,0,4,56,93.33
+K13.0944,rOJ _R01,,,Red,DACK,,Commercial,NC1501,Russell Lowe,203,0,74,129,63.55

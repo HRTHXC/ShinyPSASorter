@@ -7,9 +7,9 @@ output: html_document
 
 ## ShinyPSASorter
 
-This is an R Markdown document written for the ShinySorter application, based from the VBScript written by Harrison Crane. It helps gives easier viewing of data of PSA death in the plantations here at PFR, allowing for those users to find the successful crosses of plants, and to cull those less successful crosses.
+This is an R app written for the ShinySorter application, based from the VBScript written by Harrison Crane. It helps gives easier viewing of data of PSA death in the plantations here at PFR, allowing for those users to find the successful crosses of plants, and to cull those less successful crosses.
 
-This is a final release ( FRead (final), Interim (experimental), and VBScript (initial, beta) ) prior to the development of the Online Shiny release. Input is via .csv document, which can be downloaded from <a href="http://shiny.powerplant.pfr.co.nz/PsaBlockSummary/">here, under "Family consolidation"</a>, for use on your client machine.
+This is a interim release (Shiny and VBScript are the best working versions). Input is via .csv document (.csv or .xls(x) for Excel), which can be downloaded from <a href="http://shiny.powerplant.pfr.co.nz/PsaBlockSummary/">here, under "Family consolidation"</a>, for use on your client machine.
 
 email: Harrison.crane@plantandfood.co.nz
 
@@ -47,11 +47,21 @@ It should also be notice that due to human error, 2D MATRIX TABLES DO NOT EXIST 
 
 ## Development release to Shiny (.csv only)
 
-Current dev version being created can be found in "filteredDownload mumdad2d".
+Current dev version being created can be found in "filteredDownload multipleRun".
 
-Upon loading the program, the user is asked to load in a correctly-formatted CSV file, which can be found at http://shiny-dev.powerplant.pfr.co.nz/PsaBlockSummary/ . It will then do all the work required and then give you the option to download to .csv file for all different subsets
+Upon loading the program, and clicking the file upload button, the user is asked to load in a correctly-formatted CSV file, which can be found at http://shiny-dev.powerplant.pfr.co.nz/PsaBlockSummary/ . It will then do all the work required and then give you the option to download to .csv file for all different subsets
 
-Click the "Knit HTML" button, and the script will run. .Rmd releases require the user to select from the file menu a .csv file from the Shiny website, but afterwards, will output completely in the new window. It will also write those tables into individual .csv file for later analysis.
+Click the "Run" button on any of the .R files enclosed in the program, and then you can use the program.
+
+Known bugs:
+
+1: (FIXED) After omitting values, you cannot return to the full table, only n-1 rows (click the button "clear ommisions" to fix)
+
+2: (FIXED) Omitting all the value will cause a crash (allow a little time, table will reset back to no omissions)
+
+3: (FIXED) Blank generated cross codes are not detected in the omissions (PH_#) (code is now using crossname, gives better context in data processing and also solve issue with index of PH)
+
+4: (FIXED) Uploading a new file doesn't update the Omit BrCrCodes with the new BrCrCodes from the new table
 
 ## Dev suggestions
 
@@ -60,7 +70,3 @@ It's preferred you use FRead .Rmd, as it's the most stable and more reliable to 
 1: Blank Breeding Cross Codes
 
 By default, if the script detects that a BrCrCode contains nothing, it will change it to PH (placeholder) _ (number row it is in). For example, a blank brcrcode at row 76 will give the dummy output of PH_76. A suggestion, where possible is to use the CrossName in Column A of the CSV file. Copy those values where Column B is currently blank into Column B, and then run the script.
-
-2: Generated files are sent to the home directory
-
-For windows, this is My Documents, generatedOutput, For Mac OSX or Linux this is your home or user folder, generatedOutput, files are told apart by name and date created

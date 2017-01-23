@@ -7,7 +7,6 @@
 #    http://shiny.rstudio.com/
 #
 
-
 ui <- fluidPage(
   title = 'DataTables Information',
   h1('ShinyPSASorter'),
@@ -22,10 +21,10 @@ ui <- fluidPage(
   ## Access file as input$upload_file$datapath inside a reactive element in server.R
   fileInput("upload_file", "Upload CSV file"),
   # fluidRow(
-  #   p(class = 'text-center', downloadButton('x9', 'Download All Data'))
+  #   p(class = 'text-center', downloadButton('x9', 'Print data'))
   # ),
   selectizeInput('tableFilter', "Omit BrCrCodes", choices = NULL, multiple = TRUE),
-  actionButton('runWithOmissions', "Run with omissions"),
+  actionButton('clearOmission', "Clear omissions"),
   h2('Combination data output'),
   fluidRow(
     column(6, DT::dataTableOutput('x1'))
