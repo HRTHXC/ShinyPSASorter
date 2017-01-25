@@ -9,7 +9,7 @@ output: html_document
 
 This is an R app written for the ShinySorter application, based from the VBScript written by Harrison Crane. It helps gives easier viewing of data of PSA death in the plantations here at PFR, allowing for those users to find the successful crosses of plants, and to cull those less successful crosses.
 
-This is a interim release (Shiny and VBScript are the best working versions). Input is via .csv document (.csv or .xls(x) for Excel), which can be downloaded from <a href="http://shiny.powerplant.pfr.co.nz/PsaBlockSummary/">here, under "Family consolidation"</a>, for use on your client machine.
+This is a final release (Shiny FINAL and VBScript are the best working versions, there were many different iterations). Input is via .csv document (.csv or .xls(x) for Excel), which can be downloaded from <a href="http://shiny.powerplant.pfr.co.nz/PsaBlockSummary/">here, under "Family consolidation"</a>, for use on your client machine.
 
 email: Harrison.crane@plantandfood.co.nz
 
@@ -43,30 +43,19 @@ In RStudio, you should also have certain packages install in order for the scrip
 
 Hit enter and let those repos download and install. It may take a little time, but then you can use the script. Total download required is about 3.8MB.
 
-It should also be notice that due to human error, 2D MATRIX TABLES DO NOT EXIST IN THIS VERSION. SORRY.
+It should also be notice that due to human error, 2D MATRIX TABLES DO NOT EXIST IN THIS VERSION. SORRY. I did a dumb.
 
 ## Development release to Shiny (.csv only)
 
-Current dev version being created can be found in "filteredDownload multipleRun".
+Relevant version being created can be found in "FINAL".
 
 Upon loading the program, and clicking the file upload button, the user is asked to load in a correctly-formatted CSV file, which can be found at http://shiny-dev.powerplant.pfr.co.nz/PsaBlockSummary/ . It will then do all the work required and then give you the option to download to .csv file for all different subsets
 
 Click the "Run" button on any of the .R files enclosed in the program, and then you can use the program.
 
+For viewing the 2D tables, it's reccomended to download the table and open in excel, then using this useful trick:
+<a href="http://stackoverflow.com/questions/10915733/freezing-row-1-and-column-a-at-the-same-time">Locking row and colnames at the same time</a>
+
 Known bugs:
 
-1: (FIXED) After omitting values, you cannot return to the full table, only n-1 rows (click the button "clear ommisions" to fix)
-
-2: (FIXED) Omitting all the value will cause a crash (allow a little time, table will reset back to no omissions)
-
-3: (FIXED) Blank generated cross codes are not detected in the omissions (PH_#) (code is now using crossname, gives better context in data processing and also solve issue with index of PH)
-
-4: (FIXED) Uploading a new file doesn't update the Omit BrCrCodes with the new BrCrCodes from the new table
-
-## Dev suggestions
-
-It's preferred you use FRead .Rmd, as it's the most stable and more reliable to unexpected input. Then again, you should have practice to proofread the csv before using it. Here are some cases where you should do so.
-
-1: Blank Breeding Cross Codes
-
-By default, if the script detects that a BrCrCode contains nothing, it will change it to PH (placeholder) _ (number row it is in). For example, a blank brcrcode at row 76 will give the dummy output of PH_76. A suggestion, where possible is to use the CrossName in Column A of the CSV file. Copy those values where Column B is currently blank into Column B, and then run the script.
+Nil (self-confidence for days...)
