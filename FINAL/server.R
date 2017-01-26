@@ -166,7 +166,7 @@ shinyServer(function(input, output, session) {
       #find the code that matches Lth mother code
       for(j in 1:length(testMothers$BrCrCode)){
         #if those two codes match
-        if(grepl(testMothers$BrCrCode[j], testParents$MotherCode[l])){
+        if(grepl(paste("^", testMothers$BrCrCode[j], "$", sep=""), testParents$MotherCode[l])){
           #the number we receive in the end is y position in the 2d table for the survival rate
           motherCodeFound <- j
           break
@@ -175,7 +175,7 @@ shinyServer(function(input, output, session) {
       #find the code that matches Kth mother code
       for(k in 1:length(testFathers$BrCrCode)){
         #if those two codes match
-        if(grepl(testFathers$BrCrCode[k], testParents$FatherCode[l])){
+        if(grepl(paste("^", testFathers$BrCrCode[k], "$", sep=""), testParents$FatherCode[l])){
           #the number we receive in the end is x position in the 2d table for the survival rate
           fatherCodeFound <- k
           m <- m + 1
@@ -185,7 +185,7 @@ shinyServer(function(input, output, session) {
       #find the code that matches Nth mother code
       for(n in 1:length(testParentsVerbaitum$BrCrCode)){
         #if those two codes match
-        if(grepl(testParentsVerbaitum$BrCrCode[n], testParents$BrCrCode[i])){
+        if(grepl(paste("^", testParentsVerbaitum$BrCrCode[n], "$", sep=""), testParents$BrCrCode[i])){
           #if the planted total for a plant (excluding those dying of nonPsa causes) is less than 40, we must tag it to show it's less than the statistical signifcant baseline when we print it out to the table (survival rate), if not, just print it out to the table (survival rate) 
           ifelse((testParentsVerbaitum$Planted[n] - testParentsVerbaitum$nonPsa[n]) < 40, (twoDtable[motherCodeFound, fatherCodeFound] = paste(testParentsVerbaitum$survivalrate[n], "STS", sep = " ")), (twoDtable[motherCodeFound, fatherCodeFound] = testParentsVerbaitum$survivalrate[n]))
           break;
