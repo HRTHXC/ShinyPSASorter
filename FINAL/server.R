@@ -117,6 +117,11 @@ shinyServer(function(input, output, session) {
       }
       #if the brcrcode is formatted like this (eg. HO515)
       if(underscoreCount[i] == 0) {
+        if(grepl(x$BrCrCode[i], "Hayward")){
+          x$MotherCode[i] <- x$FatherCode[i] <- as.character("Hayward")
+          x$BrCrCode[i] <- paste(x$MotherCode[i], "_", x$FatherCode[i], sep = "")
+          next
+        }
         #strip the code apart by character type, mother code uses letters, father code uses numbers, by convention, there may be some outliers though
         x$MotherCode[i] <- as.character(str_extract(x$BrCrCode[i], "[aA-zZ]+"))
         x$FatherCode[i] <- as.character(str_extract(x$BrCrCode[i], "[0-9]+"))
